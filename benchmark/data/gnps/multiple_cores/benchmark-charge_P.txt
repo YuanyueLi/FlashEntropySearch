@@ -1,0 +1,100 @@
+Benchmarking with 1 threads, charge P, library number 1000000 and query number 100000...
+Fast entropy search used time: 908.0617988109589
+	Command being timed: "/home/yli/Software/anaconda3/envs/py39/bin/python ./31_benchmark_with_multiple_cores.py -file_index ./../data/gnps//library_index/index-charge_P-number_1000000.bin -file_query ./../data/gnps//spectral_library/spectra-charge_P-number_100000.pkl -threads 1"
+	User time (seconds): 908.72
+	System time (seconds): 0.53
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:09.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 921108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 200014
+	Voluntary context switches: 9346
+	Involuntary context switches: 2366
+	Swaps: 0
+	File system inputs: 963032
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Benchmarking with 2 threads, charge P, library number 1000000 and query number 100000...
+Fast entropy search with multiprocessing used time: 465.8817811012268
+	Command being timed: "/home/yli/Software/anaconda3/envs/py39/bin/python ./31_benchmark_with_multiple_cores.py -file_index ./../data/gnps//library_index/index-charge_P-number_1000000.bin -file_query ./../data/gnps//spectral_library/spectra-charge_P-number_100000.pkl -threads 2"
+	User time (seconds): 926.23
+	System time (seconds): 0.71
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:47.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1038324
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 113501
+	Minor (reclaiming a frame) page faults: 275177
+	Voluntary context switches: 5879
+	Involuntary context switches: 1451
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Benchmarking with 4 threads, charge P, library number 1000000 and query number 100000...
+Fast entropy search with multiprocessing used time: 243.162659406662
+	Command being timed: "/home/yli/Software/anaconda3/envs/py39/bin/python ./31_benchmark_with_multiple_cores.py -file_index ./../data/gnps//library_index/index-charge_P-number_1000000.bin -file_query ./../data/gnps//spectral_library/spectra-charge_P-number_100000.pkl -threads 4"
+	User time (seconds): 957.61
+	System time (seconds): 0.89
+	Percent of CPU this job got: 392%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:04.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1038288
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 113501
+	Minor (reclaiming a frame) page faults: 302150
+	Voluntary context switches: 3264
+	Involuntary context switches: 1427
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Benchmarking with 8 threads, charge P, library number 1000000 and query number 100000...
+Fast entropy search with multiprocessing used time: 152.50511169433594
+	Command being timed: "/home/yli/Software/anaconda3/envs/py39/bin/python ./31_benchmark_with_multiple_cores.py -file_index ./../data/gnps//library_index/index-charge_P-number_1000000.bin -file_query ./../data/gnps//spectral_library/spectra-charge_P-number_100000.pkl -threads 8"
+	User time (seconds): 1187.45
+	System time (seconds): 1.33
+	Percent of CPU this job got: 772%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:33.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1038008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 113501
+	Minor (reclaiming a frame) page faults: 347712
+	Voluntary context switches: 2355
+	Involuntary context switches: 1236
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
