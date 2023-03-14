@@ -48,6 +48,56 @@ python example_hybrid_search.py
 
 ## Use Flash Entropy Search with your own code
 
+To integrate the Flash Entropy Search library into your own code, you need to do the following steps:
+
+1. Clean the spectra.
+   We provide a function `clean_spectrum` to clean the spectra, using the following parameters:
+
+   - peaks: The peaks of the spectrum, a numpy array with shape (n, 2), where n is the number of peaks, and the first column is the m/z values, and the second column is the intensity values. This numpy array needs to be in the dtype `np.float32`.
+   - min_mz: The minimum m/z value to keep. Default is 0.0.
+   - max_mz: The maximum m/z value to keep. Default is -1, which will not remove any peaks. Set it to the precursor_mz - 1.6 for MS2 spectra is highly recommended.
+   - max_peak_num: The maximum number of peaks to keep. Default is -1, which will keep all peaks.
+   - noise_threshold: The noise threshold to remove the low intensity peaks. Default is 0.01.
+   - normalize_intensity: Whether to normalize the intensity values. Default is 1, which will normalize the sum of the intensity values to 1.0. Set it to 1 is required for the Flash Entropy Search.
+   - ms2_da: The m/z tolerance for MS2 spectra. Need to be at least twice the m/z tolerance of the search. Default is 0.05.
+
+2. Build the library index.
+
+   This step can be done with the following code:
+
+   ```python
+   flash_entropy = EntropySearch()
+   spectral_library = flash_entropy.build_index(spectral_library,sort_by_precursor_mz=True)
+   ```
+
+   - Please note that the `spectral_library` will be re-sorted for faster identity search. If you don't want to sort the library, you can set `sort_by_precursor_mz` to `False`, but you can't perform identity search.
+
+   The `spectral_library` is a list of dictionaries, each dictionary contains the information of a spectrum. The following keys are required:
+
+   - precursor_mz: The precursor m/z value of the spectrum.
+   - peaks: The peaks of the spectrum, need to the output of the `clean_spectrum` function. A numpy array with shape (n, 2), where n is the number of peaks, and the first column is the m/z values, and the second column is the intensity values. This numpy array needs to be in the dtype `np.float32`.
+
+3. Perform the search.
+
+   This step can be done with the following code:
+
+   ```python
+    entropy_similarity_for_identity_search = flash_entropy.search_identity(
+        precursor_mz=query_spectrum['precursor_mz'],
+        peaks=query_spectrum['peaks'],
+        ms1_tolerance_in_da=0.01,
+        ms2_tolerance_in_da=0.02)
+
+    entropy_similarity_for_open_search = flash_entropy.search_open(
+        peaks=query_spectrum['peaks'],
+        ms2_tolerance_in_da=0.02)
+   ```
+    - The `search_identity` function will perform the identity search, and return the entropy similarity values for each spectrum in the library.
+    - The `search_open` function will perform the open search, and return the entropy similarity values for each spectrum in the library.
+
+    - The peaks of the query spectrum need to be the output of the `clean_spectrum` function.
+    
+
 The following example code shows how to use the Flash Entropy Search library in your own code.
 
 ```python
