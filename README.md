@@ -1,114 +1,81 @@
-# FlashEntropySearch
+# The source code for Flash Entropy Search
 
-This is a Python implementation of the Flash Entropy Search algorithm. If you have any questions, feel free to contact me.
+You can find the benchmark result and the original code used in our manuscript under the `manuscript` folder. We improved our code for easier use, the latest version of the code can be found under the `ms_entropy` folder.
 
-## Installation
+# Installation
 
-- The program is been tested on Kde Neon 5.26 (Ubuntu 22.04).
+## Requirements
 
-### Requirements
+- Python >= 3.8
+- numpy >= 1.18
+- cython >= 0.29
 
-- Python 3.9
-- Numpy
-- Cupy (optional, required for GPU support)
+## Install
 
-### Build
-
-- The script needs to be built before use.
+### From PyPI
 
 ```bash
-python setup.py build_ext --inplace
+pip install ms_entropy
 ```
 
-## Use Flash Entropy Search with example
-
-The following example scripts shows how to download all MassBank.us(MoNA) spectra, build an index for the spectra, and perform the Flash Entropy Search (identity, open, neutral loss, and hybrid search) of a given mass spectrum.
-
-Please note that the example scripts will download all MassBank.us(MoNA) data, and extract all spectra from the downloaded data. Which might need about 3-4 GB of disk space. Meanwhile, parsing all spectra will take about 10-30 minutes depending on the computer. The library index will take a few more minutes to build. Downloading database, extracting spectra, and building the index will only be performed once. The index will be saved in the `data` directory. The index will be loaded automatically when the example scripts are run again.
-
-Perform Flash Entropy Search on a given mass spectrum usually takes **_less than 10 milliseconds_**. And the top 5 results will be shown. You can modify the example scripts by yourself to search more spectra or to show more results.
-
-- This example script will download all MassBank.us(MoNA) data, build an index, and perform the identity and open search of a given mass spectrum.
+### From source
 
 ```bash
-python example_identity_open_search.py
+python setup.py build_ext
 ```
 
-- This example script will download all MassBank.us(MoNA) data, build an index, and perform the neutral loss search of a given mass spectrum.
+## Test
 
 ```bash
-python example_neutral_loss_search.py
+python example.py
 ```
 
-- This example script will download all MassBank.us(MoNA) data, build an index, and perform the hybrid search of a given mass spectrum.
+# Usage
 
-```bash
-python example_hybrid_search.py
-```
+## In brief
 
-## Use Flash Entropy Search with your own code
+- Please note the code below is just a brief example, which can not be run directly. For more details, please see the next section (In detail) below.
 
-To integrate the Flash Entropy Search library into your own code, you need to do the following steps:
-
-1. Clean the spectra.
-   We provide a function `clean_spectrum` to clean the spectra, using the following parameters:
-
-   - peaks: The peaks of the spectrum, a numpy array with shape (n, 2), where n is the number of peaks, and the first column is the m/z values, and the second column is the intensity values. This numpy array needs to be in the dtype `np.float32`.
-   - min_mz: The minimum m/z value to keep. Default is 0.0.
-   - max_mz: The maximum m/z value to keep. Default is -1, which will not remove any peaks. Set it to the precursor_mz - 1.6 for MS2 spectra is highly recommended.
-   - max_peak_num: The maximum number of peaks to keep. Default is -1, which will keep all peaks.
-   - noise_threshold: The noise threshold to remove the low intensity peaks. Default is 0.01.
-   - normalize_intensity: Whether to normalize the intensity values. Default is 1, which will normalize the sum of the intensity values to 1.0. Set it to 1 is required for the Flash Entropy Search.
-   - ms2_da: The m/z tolerance for MS2 spectra. Need to be at least twice the m/z tolerance of the search. Default is 0.05.
-
-2. Build the library index.
-
-   This step can be done with the following code:
+1. Step 1: Build index
 
    ```python
-   flash_entropy = EntropySearch()
-   spectral_library = flash_entropy.build_index(spectral_library,sort_by_precursor_mz=True)
+   from ms_entropy.flash_entropy_search import FlashEntropySearch
+   flash_entropy = FlashEntropySearch()
+   flash_entropy.build_index(spectral_library)
    ```
 
-   - Please note that the `spectral_library` will be re-sorted for faster identity search. If you don't want to sort the library, you can set `sort_by_precursor_mz` to `False`, but you can't perform identity search.
-
-   The `spectral_library` is a list of dictionaries, each dictionary contains the information of a spectrum. The following keys are required:
-
-   - precursor_mz: The precursor m/z value of the spectrum.
-   - peaks: The peaks of the spectrum, need to the output of the `clean_spectrum` function. A numpy array with shape (n, 2), where n is the number of peaks, and the first column is the m/z values, and the second column is the intensity values. This numpy array needs to be in the dtype `np.float32`.
-
-3. Perform the search.
-
-   This step can be done with the following code:
+2. Step 2: Clean the query spectrum.
 
    ```python
-    entropy_similarity_for_identity_search = flash_entropy.search_identity(
-        precursor_mz=query_spectrum['precursor_mz'],
-        peaks=query_spectrum['peaks'],
-        ms1_tolerance_in_da=0.01,
-        ms2_tolerance_in_da=0.02)
-
-    entropy_similarity_for_open_search = flash_entropy.search_open(
-        peaks=query_spectrum['peaks'],
-        ms2_tolerance_in_da=0.02)
+   query_peaks = flash_entropy.clean_spectrum(...)
    ```
-    - The `search_identity` function will perform the identity search, and return the entropy similarity values for each spectrum in the library.
-    - The `search_open` function will perform the open search, and return the entropy similarity values for each spectrum in the library.
 
-    - The peaks of the query spectrum need to be the output of the `clean_spectrum` function.
-    
+3. Step 3: Search the library
 
-The following example code shows how to use the Flash Entropy Search library in your own code.
+   ```python
+    similarity = flash_entropy.identity_search(...) # Identity search
+    similarity = flash_entropy.open_search(...) # Open search
+    similarity = flash_entropy.neutral_loss_search(...) # Neutral loss search
+    similarity = flash_entropy.hybrid_search(...) # Hybrid search
+   ```
+
+4. Step 4: Get the top-n results (optional)
+
+   ```python
+   top_n = flash_entropy.get_topn_matches(similarity, topn=..., min_similarity=...)
+   ```
+
+## In detail
+
+### Step 0: Prepare the library spectra
+
+The library spectra needs to be represented as a list of dictionaries, where each dictionary represents a spectrum. The following example shows the format of the library spectra.
+
+In the dictionary, the key "precursor_mz" and "peaks" are required, which represent the precursor m/z and the peaks of the spectrum, respectively. The "precursor_mz" needs to be a float number, while the "peaks" can be either a list of lists or a numpy array, which in format of [[mz, intensity], ...]. The other keys are optional, which can be used to store the metadata of the spectrum.
 
 ```python
-import numpy as np
-from flash_entropy.entropy_search import EntropySearch
-from flash_entropy.functions import clean_spectrum
-
-# This is your library spectra, here the "precursor_mz" and "peaks" are required. The "id" is optional.
 spectral_library = [
     {
-        "id": "Demo spectrum 1",
         "precursor_mz": 150.0,
         "peaks": np.array([[100.0, 1.0], [101.0, 1.0], [103.0, 1.0]], dtype=np.float32)
     },
@@ -118,52 +85,139 @@ spectral_library = [
         "peaks": np.array([[200.0, 1.0], [201.0, 1.0], [202.0, 1.0]], dtype=np.float32)
     },
     {
-        "id": "Demo spectrum 3",
+        "metadata": "ABC",
+        "XXX": "YYY",
         "precursor_mz": 200.0,
-        "peaks": np.array([[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]], dtype=np.float32)
+        "peaks":[[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]]
     }
 ]
-# This is your query spectrum, here the "peaks" is required, the "precursor_mz" is required for identity search.
-query_spectrum = {
-    "precursor_mz": 150.0,
-    "peaks": np.array([[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]], dtype=np.float32)
-}
+```
 
-#################### Step 1: Clean the spectra. ####################
-# Clean the library spectra.
-for spectrum in spectral_library:
-    spectrum["peaks"] = clean_spectrum(peaks=spectrum['peaks'], max_mz=spectrum['precursor_mz']-1.6, noise_threshold=0.01, ms2_da=0.05)
+### Step 1: Build index
 
-# Clean the query spectrum.
-query_spectrum["peaks"] = clean_spectrum(peaks=query_spectrum['peaks'], max_mz=query_spectrum['precursor_mz']-1.6, noise_threshold=0.01, ms2_da=0.05)
+This step is to build the index for the library spectra, which is required for the Flash entropy search. Which can be done by calling the `build_index` function of the `FlashEntropySearch` class. The spectra in the `spectral_library` do not need any pre-processing. The index building process will do all the pre-processing automatically.
 
-#################### Step 2: Build the library index. ####################
-flash_entropy = EntropySearch()
-# Please note that the library spectra will be re-sorted by precursor_mz for fast identity search.
-spectral_library = flash_entropy.build_index(spectral_library, sort_by_precursor_mz=True)
-# This step is optional, just used to show the spectrum id in the search results.
-flash_entropy.library_id = [spectrum['id'] for spectrum in spectral_library]
+Please note that for the fast identity search, all spectra in the `spectral_library` will be **re-sorted** by the m/z values. The `build_index` function will return a list of the re-sorted spectra, which can be used to map the results back to the original order. You can also add some metadata like `id` to the spectra to keep track of the original order.
 
-#################### Step 3: Perform the Flash entropy search. ####################
-# Perform the identity search.
-entropy_similarity = flash_entropy.search_identity(precursor_mz=query_spectrum['precursor_mz'],
+```python
+from ms_entropy.flash_entropy_search import FlashEntropySearch
+flash_entropy = FlashEntropySearch()
+flash_entropy.build_index(spectral_library)
+```
+
+### Step 2: Clean the query spectrum
+
+Before library search, your query spectrum needs to be pre-processed by the `clean_spectrum` function. The `clean_spectrum` function will do the following things:
+
+1. The empty peaks (m/z = 0 or intensity = 0) will be removed.
+
+2. Remove the peaks have m/z lower than the 0.
+
+3. Remove the peaks have m/z higher than the `precursor_mz - precursor_ions_removal_da`. This step can be used for remove precursor ions, which can improve the spectral comparison quality.
+
+4. Centroid the spectrum by merging the peaks within the +/- `min_ms2_difference_in_da`, sort the result spectrum by m/z.
+
+5. Remove the peaks with intensity less than the `noise_threshold` \* maximum (intensity).
+
+6. Keep the top `max_peak_num` peaks, and remove the rest peaks.
+
+7. Normalize the intensity to sum to 1.
+
+```python
+query_spectrum['peaks'] = flash_entropy.clean_spectrum(precursor_mz=query_spectrum['precursor_mz'],peaks=query_spectrum['peaks'])
+```
+
+### Step 3: Search the library
+
+We provide the following four search functions for the library search:
+
+- `identity_search` --> Identity search
+
+- `open_search` --> Open search
+
+- `neutral_loss_search` --> Neutral loss search
+
+- `hybrid_search` --> Hybrid search
+
+The four functions have those parameters: `precursor_mz`, `peaks`, `ms1_tolerance_in_da`, `ms2_tolerance_in_da`, `target`, and return the similarity score of each spectrum in the library, in the same order as the spectral library returned by the `build_index` function.
+
+The example below shows how to use those functions to search the library.
+
+```python
+# Identity search
+entropy_similarity = flash_entropy.identity_search(precursor_mz=query_spectrum['precursor_mz'],
                                                    peaks=query_spectrum['peaks'],
                                                    ms1_tolerance_in_da=0.01, ms2_tolerance_in_da=0.02)
-# Output the best match.
-best_match = np.argmax(entropy_similarity)
-print(f"Best identity search match: {flash_entropy.library_id[best_match]}, entropy similarity: {entropy_similarity[best_match]:.4f}")
 
-# Perform the open search.
-entropy_similarity = flash_entropy.search_open(peaks=query_spectrum['peaks'], ms2_tolerance_in_da=0.02)
+# Open search
+entropy_similarity = flash_entropy.open_search(peaks=query_spectrum['peaks'], ms2_tolerance_in_da=0.02)
 
-# Output the best match.
-best_match = np.argmax(entropy_similarity)
-print(f"Best open search match: {flash_entropy.library_id[best_match]}, entropy similarity: {entropy_similarity[best_match]:.4f}")
+# Neutral loss search
+entropy_similarity = flash_entropy.neutral_loss_search(precursor_mz=query_spectrum['precursor_mz'],
+                                                       peaks=query_spectrum['peaks'],
+                                                       ms2_tolerance_in_da=0.02)
+
+# Hybrid search
+entropy_similarity = flash_entropy.hybrid_search(precursor_mz=query_spectrum['precursor_mz'],
+                                                 peaks=query_spectrum['peaks'],
+                                                 ms2_tolerance_in_da=0.02)
+
 ```
 
-The code will output the following results:
+### Step 4: Get the top-n results (optional)
 
-```bash
-Best identity search match: Demo spectrum 1, entropy similarity: 0.6667
-Best open search match: Demo spectrum 3, entropy similarity: 1.0000
+After you search spectral library, most spectral similarity will be 0. And you may only want to see the top-n results or the results with similarity higher than a threshold. You can use the `get_topn_matches` function to get the top-n results.
+
+This function accepts three parameters:
+`similarity_array`: the similarity score returned by the search function.
+`topn`: the number of top results you want to get, set to `None` to get all results.
+`min_similarity`: the minimum similarity score you want to get, set to `None` to get all results.
+
+This function will return a list of dictionaries, every dictionary represents a spectrum in the library. The dictionary is the same as the dictionary in the library spectra (the input of `build_index`), except that the `peaks` key is removed. The `entropy_similarity` key is added to store the similarity score of the spectrum.
+
+```python
+topn_match = flash_entropy.get_topn_matches(entropy_similarity, topn=3, min_similarity=0.01)
 ```
+
+## Misc: save and load index
+
+You can use the python's built-in `pickle` module to save and load the `FlashEntropySearch` object.
+
+Meanwhile, we also provide `read` and `write` functions to save and load the index.
+
+To write `FlashEntropySearch` object into disk:
+
+```python
+flash_entropy.write('path/to/index')
+```
+
+To read `FlashEntropySearch` object from disk:
+
+```python
+flash_entropy = FlashEntropySearch()
+flash_entropy.read('path/to/index')
+```
+
+If you have a super large spectral library, or your computer's memory is low, you can use the `low_memory` parameter to partially load the spectral library. For exmaple:
+
+```python
+flash_entropy = FlashEntropySearch(low_memory=True)
+flash_entropy.read('path/to/index')
+```
+
+The index only need to be build for one time. After that, you can use the `read` function to load the index. The index built by the `low_memory=Flase` mode can be loaded by the `FlashEntropySearch` object with both `low_memory=Flase` and `low_memory=True` mode.
+
+# Example
+
+We provide some examples for you to better understand how to use the package. You can find the examples in the root directory of the package.
+
+- `example.py` --> An example shows how to use the Flash entropy search from scratch.
+- `example_search_mona_method_1.py` --> An example shows how to use the Flash entropy search to search the [MassBank.us (MoNA)](https://massbank.us/) database.
+- `example_search_mona_method_2_low_memory.py` --> An example shows how to use the Flash entropy search to search the [MassBank.us (MoNA)](https://massbank.us/) database. This example uses less memory than the `example_search_mona_method_1.py` example.
+- `example_search_mona_method_3.py` --> An other example shows how to use the Flash entropy search to search the [MassBank.us (MoNA)](https://massbank.us/) database.
+
+## Run Flash entropy search on computer with limited memory
+
+First, you need to run `example_search_mona_method_1.py` to build the index for MoNA library. The second time you run `example_search_mona_method_1.py` or `example_search_mona_method_2_low_memory.py`, the index will be loaded directly from disk.
+
+After building the index, on my computer, second time run `example_search_mona_method_1.py` takes about 1,212MB memory to search one spectrum against whole MassBank.us (MoNA) library, and second time run `example_search_mona_method_2_low_memory.py` takes about 84MB memory to search one spectrum. This feature is useful when you have a super large spectral library and your computer's memory is limited.
