@@ -79,13 +79,18 @@ class FlashEntropySearch:
         """
         return self.entropy_search.search_hybrid(target=target, precursor_mz=precursor_mz, peaks=peaks, ms2_tolerance_in_da=ms2_tolerance_in_da)
 
-    def clean_spectrum(self, precursor_mz, peaks,
-                       precursor_ions_removal_da: float = 1.6, noise_threshold=0.01, min_ms2_difference_in_da: float = 0.05, max_peak_num: int = None):
+    def clean_spectrum_for_search(self,
+                                  precursor_mz,
+                                  peaks,
+                                  precursor_ions_removal_da: float = 1.6,
+                                  noise_threshold=0.01,
+                                  min_ms2_difference_in_da: float = 0.05,
+                                  max_peak_num: int = None):
         """
         Clean the MS/MS spectrum, need to be called before any search.
 
-        :param clean_spectra:   If True, the peaks in the spectra will be cleaned before indexing. Default is True.
-                                Do not set it to False unless you know what you are doing.
+        :param precursor_mz:    The precursor m/z of the spectrum.
+        :param peaks:           The peaks of the spectrum, should be a list or numpy array with shape (N, 2), N is the number of peaks. The format of the peaks is [[mz1, intensity1], [mz2, intensity2], ...].
         :param precursor_ions_removal_da:   The ions with m/z larger than precursor_mz - precursor_ions_removal_da will be removed.
                                             Default is 1.6.
         :param noise_threshold: The intensity threshold for removing the noise peaks. The peaks with intensity smaller than noise_threshold * max(intensity)
@@ -105,8 +110,13 @@ class FlashEntropySearch:
                               max_peak_num=max_peak_num,
                               normalize_intensity=True)
 
-    def build_index(self, all_spectra_list: list = None, max_indexed_mz: float = 1500.00005,
-                    precursor_ions_removal_da: float = 1.6, noise_threshold=0.01, min_ms2_difference_in_da: float = 0.05, max_peak_num: int = None):
+    def build_index(self, 
+                    all_spectra_list: list = None, 
+                    max_indexed_mz: float = 1500.00005,
+                    precursor_ions_removal_da: float = 1.6, 
+                    noise_threshold=0.01, 
+                    min_ms2_difference_in_da: float = 0.05, 
+                    max_peak_num: int = None):
         """
         Build the index for the MS/MS spectra library.
 
@@ -142,12 +152,12 @@ class FlashEntropySearch:
         all_metadata_list = []
         for spec in all_sorted_spectra_list:
             # Clean the peaks
-            spec["peaks"] = self.clean_spectrum(peaks=spec["peaks"],
-                                                precursor_mz=spec["precursor_mz"],
-                                                precursor_ions_removal_da=precursor_ions_removal_da,
-                                                noise_threshold=noise_threshold,
-                                                min_ms2_difference_in_da=min_ms2_difference_in_da,
-                                                max_peak_num=max_peak_num)
+            spec["peaks"] = self.clean_spectrum_for_search(peaks=spec["peaks"],
+                                                           precursor_mz=spec["precursor_mz"],
+                                                           precursor_ions_removal_da=precursor_ions_removal_da,
+                                                           noise_threshold=noise_threshold,
+                                                           min_ms2_difference_in_da=min_ms2_difference_in_da,
+                                                           max_peak_num=max_peak_num)
             if len(spec["peaks"]) > 0:
                 all_spectra_list.append(spec)
                 metadata = copy.copy(spec)

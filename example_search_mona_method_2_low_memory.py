@@ -27,7 +27,7 @@ def main():
         'peaks': np.array([[205.0351, 78.571429], [206.0434, 61.764706], [380.1302, 100.000000], [423.1333, 34.033613]], dtype=np.float32),
     }
     # Clean the spectrum first.
-    spec_query['peaks'] = entropy_search.clean_spectrum(precursor_mz=spec_query["precursor_mz"], peaks=spec_query['peaks'], noise_threshold=0.01)
+    spec_query['peaks'] = entropy_search.clean_spectrum_for_search(precursor_mz=spec_query["precursor_mz"], peaks=spec_query['peaks'], noise_threshold=0.01)
 
     ###########################################################################
     # Identity Search with Flash Entropy Search.

@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import zipfile
 
-from ms_entropy.flash_entropy_search import FlashEntropySearch
+from ms_entropy import FlashEntropySearch
 
 
 url_mona = r'https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/03d5a22c-c1e1-4101-ac70-9a4eae437ef5'
@@ -27,7 +27,7 @@ def main():
         'peaks': np.array([[205.0351, 78.571429], [206.0434, 61.764706], [380.1302, 100.000000], [423.1333, 34.033613]], dtype=np.float32),
     }
     # Clean the spectrum first.
-    spec_query['peaks'] = entropy_search.clean_spectrum(precursor_mz=spec_query["precursor_mz"], peaks=spec_query['peaks'], noise_threshold=0.01)
+    spec_query['peaks'] = entropy_search.clean_spectrum_for_search(precursor_mz=spec_query["precursor_mz"], peaks=spec_query['peaks'], noise_threshold=0.01)
 
     ###########################################################################
     # Identity Search with Flash Entropy Search.

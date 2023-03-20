@@ -1,6 +1,6 @@
 import numpy as np
 import pprint
-from ms_entropy.flash_entropy_search import FlashEntropySearch
+from ms_entropy import FlashEntropySearch
 
 # This is your library spectra, here the "precursor_mz" and "peaks" are required. The "id" is optional.
 spectral_library = [
@@ -36,8 +36,8 @@ flash_entropy = FlashEntropySearch()
 spectral_library = flash_entropy.build_index(spectral_library)
 
 # Clean the spectrum. This step is required!
-query_spectrum['peaks'] = flash_entropy.clean_spectrum(precursor_mz=query_spectrum['precursor_mz'],
-                                                       peaks=query_spectrum['peaks'])
+query_spectrum['peaks'] = flash_entropy.clean_spectrum_for_search(precursor_mz=query_spectrum['precursor_mz'],
+                                                                  peaks=query_spectrum['peaks'])
 
 # Perform the identity search.
 entropy_similarity = flash_entropy.identity_search(precursor_mz=query_spectrum['precursor_mz'],
