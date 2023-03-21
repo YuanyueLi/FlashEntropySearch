@@ -2,6 +2,8 @@
 
 You can find the benchmark result and the original code used in our manuscript under the `manuscript` folder. We improved our code for easier use, the latest version of the code can be found under the `ms_entropy` folder.
 
+The API documents of the latest version can be found [here](https://flashentropysearch.readthedocs.io/en/develop/).
+
 # Installation
 
 ## Requirements
