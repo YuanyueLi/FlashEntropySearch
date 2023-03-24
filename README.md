@@ -15,8 +15,16 @@ The API documentation for the latest version can be found [here](https://flashen
 To use this package, you need to have the following software installed on your system:
 
 - Python >= 3.8
+
+- C compiler and Python development headers.
+
+  - When installing on Linux, you may need to install the `gcc` and `python-dev` packages first.
+  - When installing on Windows, you may need to install the [Microsoft Visual C++ 14.0 or greater Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) first.
+
 - numpy >= 1.18 (will be installed automatically when you install the package from PyPI)
+
 - Cython >= 0.29 (will be installed automatically when you install the package from PyPI)
+
 - cupy >= 8.3.0 (optional, only required for GPU acceleration)
 
 The `numpy` and `cython` dependencies will be installed automatically when you install the package from PyPI. The `cupy` dependency is optional, and is only required for GPU acceleration. If you want to use GPU acceleration, you need to install `cupy` manuall before installing the package from PyPI.
@@ -34,8 +42,6 @@ pip install ms_entropy
 ```
 
 - The installation time should be less than 1 minute, if everything is set up correctly.
-
-- When installing on Windows, you may need to install the [Microsoft Visual C++ 14.0 or greater Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) first.
 
 ### From source
 
@@ -194,17 +200,17 @@ We provide four search functions for library search:
 
 Each function takes the query spectrum as input, along with the spectral library index built in Step 1, and returns the similarity score of each spectrum in the library, in the same order as the spectral library returned by the `build_index` function.
 
-Here are the parameters that each search function takes:
+- Here are the parameters that each search function takes:
 
-    `precursor_mz`: The precursor m/z of the query spectrum.
+  `precursor_mz`: The precursor m/z of the query spectrum.
 
-    `peaks`: The peaks of the query spectrum.
+  `peaks`: The peaks of the query spectrum.
 
-    `ms1_tolerance_in_da`: The mass tolerance to use for the precursor m/z in Da.
+  `ms1_tolerance_in_da`: The mass tolerance to use for the precursor m/z in Da.
 
-    `ms2_tolerance_in_da`: The mass tolerance to use for the fragment ions in Da.
+  `ms2_tolerance_in_da`: The mass tolerance to use for the fragment ions in Da.
 
-    `target`: Run the similarity calculation on cpu or gpu. The default value is "cpu".
+  `target`: Run the similarity calculation on cpu or gpu. The default value is "cpu".
 
 Here's an example of how to use these functions:
 
@@ -291,11 +297,11 @@ The index only needs to be built once. After that, you can use the read function
 
 We have included several examples in the root directory of the package to help you better understand how to use it. These examples cover a range of use cases and demonstrate how to perform common tasks such as building an index, searching for spectra, and evaluating search performance.
 
-### `example.py`
+## `example.py`
 
 An example shows how to use the Flash entropy search from scratch. The running time should be less than 1 second, and the expected output should be:
 
-```
+```text
     -------------------- Identity search --------------------
     [{'entropy_similarity': 0.6666667,
     'id': 'Demo spectrum 1',
@@ -332,63 +338,63 @@ An example shows how to use the Flash entropy search from scratch. The running t
     'precursor_mz': 200.0}]
 ```
 
-### `example_search_mona_method_1.py`
+## `example_search_mona_method_1.py`
 
 An example shows how to use the Flash entropy search to search the whole [MassBank.us (MoNA)](https://massbank.us/) database.
 
 The first time you run this example, it will take about 10-20 minutes to download the spectra from MoNA and parse the spectra from .msp files. And it will take about 2-4 minutes to build the index for MoNA library. The second time you run this example, the index will be loaded directly from disk. The running time should be less than 1 second, and the expected output should be:
 
-```
-Loading index
-Downloading https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/03d5a22c-c1e1-4101-ac70-9a4eae437ef5 to /p/FastEntropySearch/github_test/data/mona-2023-03-23.zip
-Loading spectra from /p/FastEntropySearch/github_test/data/mona-2023-03-23.zip, this may take a while.
-Loaded 811840 positive spectra and 1198329 negative spectra.
-Building index, this will only need to be done once.
-Building index for spectra with ion mode P
-Building index for spectra with ion mode N
-Saving index
-********************************************************************************
-Identity Search with Flash Entropy Search
-Finished identity search in 0.0017 seconds with 1196680 results.
-Top 5 matches:
-Rank 1: AU116754 with score 1.0000
-Rank 2: AU116755 with score 0.8081
-Rank 3: AU116753 with score 0.6565
-Rank 4: AU116752 with score 0.2717
-********************************************************************************
-Open Search with Flash Entropy Search
-Finished open search in 0.0006 seconds with 1196680 results.
-Top 5 matches:
-Rank 1: AU116754 with score 1.0000
-Rank 2: AU116755 with score 0.8081
-Rank 3: AU116753 with score 0.6565
-Rank 4: CCMSLIB00004751228 with score 0.4741
-Rank 5: LU040151 with score 0.4317
-********************************************************************************
-Neutral Loss Search with Flash Entropy Search
-Finished neutral loss search in 0.0006 seconds with 1196680 results.
-Top 5 matches:
-Rank 1: AU116754 with score 1.0000
-Rank 2: AU116755 with score 0.8081
-Rank 3: AU116753 with score 0.6565
-Rank 4: LipidBlast2022_1230911 with score 0.3796
-Rank 5: LipidBlast2022_1230977 with score 0.3796
-********************************************************************************
-Hybrid Search with Flash Entropy Search
-Finished hybrid search in 0.0010 seconds with 1196680 results.
-Top 5 matches:
-Rank 1: AU116754 with score 1.0000
-Rank 2: AU116755 with score 0.8081
-Rank 3: AU116753 with score 0.6565
-Rank 4: CCMSLIB00004751228 with score 0.4741
-Rank 5: LU040151 with score 0.4317
+```text
+    Loading index
+    Downloading https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/03d5a22c-c1e1-4101-ac70-9a4eae437ef5 to /p/FastEntropySearch/github_test/data/mona-2023-03-23.zip
+    Loading spectra from /p/FastEntropySearch/github_test/data/mona-2023-03-23.zip, this may take a while.
+    Loaded 811840 positive spectra and 1198329 negative spectra.
+    Building index, this will only need to be done once.
+    Building index for spectra with ion mode P
+    Building index for spectra with ion mode N
+    Saving index
+    ********************************************************************************
+    Identity Search with Flash Entropy Search
+    Finished identity search in 0.0017 seconds with 1196680 results.
+    Top 5 matches:
+    Rank 1: AU116754 with score 1.0000
+    Rank 2: AU116755 with score 0.8081
+    Rank 3: AU116753 with score 0.6565
+    Rank 4: AU116752 with score 0.2717
+    ********************************************************************************
+    Open Search with Flash Entropy Search
+    Finished open search in 0.0006 seconds with 1196680 results.
+    Top 5 matches:
+    Rank 1: AU116754 with score 1.0000
+    Rank 2: AU116755 with score 0.8081
+    Rank 3: AU116753 with score 0.6565
+    Rank 4: CCMSLIB00004751228 with score 0.4741
+    Rank 5: LU040151 with score 0.4317
+    ********************************************************************************
+    Neutral Loss Search with Flash Entropy Search
+    Finished neutral loss search in 0.0006 seconds with 1196680 results.
+    Top 5 matches:
+    Rank 1: AU116754 with score 1.0000
+    Rank 2: AU116755 with score 0.8081
+    Rank 3: AU116753 with score 0.6565
+    Rank 4: LipidBlast2022_1230911 with score 0.3796
+    Rank 5: LipidBlast2022_1230977 with score 0.3796
+    ********************************************************************************
+    Hybrid Search with Flash Entropy Search
+    Finished hybrid search in 0.0010 seconds with 1196680 results.
+    Top 5 matches:
+    Rank 1: AU116754 with score 1.0000
+    Rank 2: AU116755 with score 0.8081
+    Rank 3: AU116753 with score 0.6565
+    Rank 4: CCMSLIB00004751228 with score 0.4741
+    Rank 5: LU040151 with score 0.4317
 ```
 
-### `example_search_mona_method_2_low_memory.py`
+## `example_search_mona_method_2_low_memory.py`
 
 An example shows how to use the Flash entropy search to search the [MassBank.us (MoNA)](https://massbank.us/) database. This example uses less memory than the `example_search_mona_method_1.py` example.
 
-### `example_search_mona_method_3.py`
+## `example_search_mona_method_3.py`
 
 An other example shows how to use the Flash entropy search to search the [MassBank.us (MoNA)](https://massbank.us/) database.
 
