@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath('../../ms_entropy/'))
 
 # -- Project information
 
-project = 'Spectral Entropy'
+project = 'MS Entropy'
 copyright = '2023, Yuanyue Li'
 author = 'Yuanyue Li'
 
@@ -26,8 +26,11 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'sphinxcontrib.email'
+    'sphinxcontrib.email',
+    'myst_parser'
 ]
+
+source_suffix = ['.rst', '.md']
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -64,6 +67,7 @@ class Mock(object):
             return mockType
         else:
             return Mock()
+
 
 MOCK_MODULES = ['ms_entropy.tools_cython']
 for mod_name in MOCK_MODULES:

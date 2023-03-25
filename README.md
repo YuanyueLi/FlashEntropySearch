@@ -1,4 +1,4 @@
-# The source code for Flash Entropy Search
+# Flash Entropy Search
 
 This repository contains the source code for Flash Entropy Search, a method using entropy similarity for fast searching mass spectrometry spectral library.
 
@@ -6,26 +6,26 @@ You can find the benchmark results and the original code used in our manuscript 
 
 We are continuously improving the code, and the latest version of the code can be found under the `ms_entropy` folder.
 
-The API documentation for the latest version can be found [here](https://flashentropysearch.readthedocs.io/en/develop/).
+You can find the documentation for the latest version of the code below or [https://flashentropysearch.readthedocs.io](https://flashentropysearch.readthedocs.io/).
 
 # Installation
 
 ## Requirements
 
-To use this package, you need to have the following software installed on your system:
+To use this package, you will need to have the following software and dependencies installed on your system:
 
 - Python >= 3.8
 
 - C compiler and Python development headers.
 
-  - When installing on Linux, you may need to install the `gcc` and `python-dev` packages first.
-  - When installing on Windows, you may need to install the [Microsoft Visual C++ 14.0 or greater Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) first.
+  - On Linux, you may need to install the `gcc` and `python-dev` (for apt) or `python-devel` (for yum) packages first.
+  - On Windows, you will need to install the [Microsoft Visual C++ 14.0 or greater Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) first.
 
-- numpy >= 1.18 (will be installed automatically when you install the package from PyPI)
+- [Numpy](https://numpy.org/) >= 1.18 (will be installed automatically when you install the package from PyPI)
 
-- Cython >= 0.29 (will be installed automatically when you install the package from PyPI)
+- [Cython](https://cython.org/) >= 0.29 (will be installed automatically when you install the package from PyPI)
 
-- cupy >= 8.3.0 (optional, only required for GPU acceleration)
+- [Cupy](https://cupy.dev/) >= 8.3.0 (optional, only required for GPU acceleration)
 
 The `numpy` and `cython` dependencies will be installed automatically when you install the package from PyPI. The `cupy` dependency is optional, and is only required for GPU acceleration. If you want to use GPU acceleration, you need to install `cupy` manuall before installing the package from PyPI.
 
@@ -69,49 +69,49 @@ python example.py
 
 - Please note the code below is just a brief example, which can not be run directly. For more details, please see the next section (In detail) below.
 
-  ### Step 1: Build index
+### Step 1: Build index
 
-  First, you need to build an index of the spectral library you want to search. You can do this by creating an instance of the `FlashEntropySearch` class and calling the `build_index` method with your spectral library data:
+First, you need to build an index of the spectral library you want to search. You can do this by creating an instance of the `FlashEntropySearch` class and calling the `build_index` method with your spectral library data:
 
-  ```python
-  from ms_entropy import FlashEntropySearch
-  flash_entropy = FlashEntropySearch()
-  flash_entropy.build_index(spectral_library)
-  ```
+```python
+from ms_entropy import FlashEntropySearch
+flash_entropy = FlashEntropySearch()
+flash_entropy.build_index(spectral_library)
+```
 
-  ### Step 2: Clean the query spectrum.
+### Step 2: Clean the query spectrum.
 
-  Before searching the library, you need to clean the query spectrum using the `clean_spectrum` function:
+Before searching the library, you need to clean the query spectrum using the `clean_spectrum` function:
 
-  ```python
-  query_peaks = flash_entropy.clean_spectrum_for_search(...)
-  ```
+```python
+query_peaks = flash_entropy.clean_spectrum_for_search(...)
+```
 
-  Alternatively, you can use the clean_spectrum_for_search method of the FlashEntropySearch class to do the same thing:
+Alternatively, you can use the clean_spectrum_for_search method of the FlashEntropySearch class to do the same thing:
 
-  ```python
-  from ms_entropy import clean_spectrum
-  query_peaks = clean_spectrum(...)
-  ```
+```python
+from ms_entropy import clean_spectrum
+query_peaks = clean_spectrum(...)
+```
 
-  ### Step 3: Search the library
+### Step 3: Search the library
 
-  Once you have built the index and cleaned the query spectrum, you can perform various types of searches on the spectral library using the FlashEntropySearch class methods:
+Once you have built the index and cleaned the query spectrum, you can perform various types of searches on the spectral library using the FlashEntropySearch class methods:
 
-  ```python
-  similarity = flash_entropy.identity_search(...) # Identity search
-  similarity = flash_entropy.open_search(...) # Open search
-  similarity = flash_entropy.neutral_loss_search(...) # Neutral loss search
-  similarity = flash_entropy.hybrid_search(...) # Hybrid search
-  ```
+```python
+similarity = flash_entropy.identity_search(...) # Identity search
+similarity = flash_entropy.open_search(...) # Open search
+similarity = flash_entropy.neutral_loss_search(...) # Neutral loss search
+similarity = flash_entropy.hybrid_search(...) # Hybrid search
+```
 
-  ### Step 4: Get the top-n results (optional)
+### Step 4: Get the top-n results (optional)
 
-  You can use the `get_topn_matches` method of the `FlashEntropySearch` class to get the top n matches from the similarity scores:
+You can use the `get_topn_matches` method of the `FlashEntropySearch` class to get the top n matches from the similarity scores:
 
-  ```python
-  top_n = flash_entropy.get_topn_matches(similarity, topn=..., min_similarity=...)
-  ```
+```python
+top_n = flash_entropy.get_topn_matches(similarity, topn=..., min_similarity=...)
+```
 
 ## In detail
 
