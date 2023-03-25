@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath('../../ms_entropy/'))
 
 # -- Project information
 
-project = 'MS Entropy'
+project = 'Flash Entropy Search'
 copyright = '2023, Yuanyue Li'
 author = 'Yuanyue Li'
 
