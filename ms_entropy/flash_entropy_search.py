@@ -126,7 +126,9 @@ class FlashEntropySearch:
         divide the spectral library into several parts, build the index for each part, and then do the identity search on each part will be much faster.
 
         The spectra provided to this function should be a dictionary in the format of {"precursor_mz": precursor_mz, "peaks": peaks}.
+
         The precursor_mz is the precursor m/z value of the MS/MS spectrum;
+        
         The peaks is an numpy array or a nested list of the MS/MS spectrum, looks like [[mz1, intensity1], [mz2, intensity2], ...].
 
         :param all_spectra_list:    A list of dictionaries in the format of {"precursor_mz": precursor_mz, "peaks": peaks},

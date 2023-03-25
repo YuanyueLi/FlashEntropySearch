@@ -11,12 +11,19 @@ def clean_spectrum(spectrum: np.ndarray,
                    normalize_intensity: bool = True) -> np.ndarray:
     """
     Clean the spectrum with the following steps:
+
     0. The empty peaks (m/z = 0 or intensity = 0) will be removed.
+
     1. Remove the peaks have m/z lower than the min_mz.
+
     2. Remove the peaks have m/z higher than the max_mz. This step can be used for remove precursor ions.
+
     3. Centroid the spectrum by merging the peaks within the +/- min_ms2_difference_in_da, sort the result spectrum by m/z.
+
     4. Remove the peaks with intensity less than the noise_threshold * maximum (intensity).
+
     5. Keep the top max_peak_num peaks, and remove the rest peaks.
+    
     5. Normalize the intensity to sum to 1.
 
     :param spectrum: The spectrum, a 2D numpy array with shape (n, 2), the first column is m/z, the second column is intensity.

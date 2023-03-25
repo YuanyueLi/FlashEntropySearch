@@ -174,6 +174,8 @@ cdef int check_centroid_c(float32[:,::1] spectrum,double ms2_ppm, double ms2_da)
     :param ms2_ppm: the mass accuracy in ppm.
     :param ms2_da: the mass accuracy in Da.
     """
+    cdef int i
+    
     if spectrum.shape[0]<=1:
         return 0
 
