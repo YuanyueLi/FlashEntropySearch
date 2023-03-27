@@ -42,7 +42,6 @@ When you have a GPU and searching a single spectrum took you more than 0.1 secon
     # entropy_similarity = entropy_search.search(
     #     precursor_mz=150.0,
     #     peaks=[[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]],
-    #     target='cpu'
     # )
     # Use this:
     entropy_similarity = entropy_search.search(

@@ -44,10 +44,11 @@ To install from source, clone the repository and run the following commands:
 
 .. code-block:: bash
 
-  git@github.com:YuanyueLi/FlashEntropySearch.git
+  git clone https://github.com/YuanyueLi/FlashEntropySearch.git
   cd FlashEntropySearch
   python setup.py build_ext --inplace
 
+Then you can copy the ``ms_entropy`` folder to your project directory. Or set your ``PYTHONPATH`` environment variable to include the ``ms_entropy`` folder.
 
 Test
 ====
