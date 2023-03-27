@@ -1,5 +1,5 @@
 ====================
-Usage
+Basic usage
 ====================
 
 
@@ -42,7 +42,10 @@ The first step is to build an index for the library spectra, which is required f
     entropy_search = FlashEntropySearch()
     entropy_search.build_index(spectral_library)
 
-It is important to note that for the fast identity search, all spectra in the ``spectral_library`` will be ``re-sorted`` by the m/z values. The ``build_index`` function will return a list of the re-sorted spectra, which can be used to map the results back to the original order. If necessary, you can also add some metadata, such as an ``id`` field, to the spectra to keep track of their original order.
+
+.. warning::
+    It is important to note that for the fast identity search, all spectra in the ``spectral_library`` will be ``re-sorted`` by the m/z values. The ``build_index`` function will return a list of the re-sorted spectra, which can be used to map the results back to the original order. If necessary, you can also add some metadata, such as an ``id`` field, to the spectra to keep track of their original order.
+
 
 Step 2: Search the library
 ==========================
@@ -113,7 +116,14 @@ Before performing a library search, the query spectrum needs to be pre-processed
 
 6. Normalize the intensity to sum to 1.
 
-To use this function, call it on your query spectrum, passing in the relevant parameters:
+Let's say you have your query spectrum looks like this:
+
+.. code-block:: python
+
+    query_spectrum = {"precursor_mz": 150.0,
+                      "peaks": [[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]]}
+
+To use the `clean_spectrum_for_search` function, call it on your query spectrum, passing in the relevant parameters:
 
 .. code-block:: python
 
@@ -140,7 +150,11 @@ We provide four search functions for library search:
 - ``neutral_loss_search`` --> Neutral loss search
 - ``hybrid_search`` --> Hybrid search
 
-Each function takes the query spectrum as input, along with the spectral library index built in Step 1, and returns the similarity score of each spectrum in the library, in the same order as the spectral library returned by the ``set_library_spectra`` function.
+Each function takes the ``pre-cleaned`` query spectrum as input, along with the spectral library index built in Step 1, and returns the similarity score of each spectrum in the library, in the same order as the spectral library returned by the ``set_library_spectra`` function.
+
+.. warning::
+    When use those four individual search functions, the ``peaks`` needs to be pre-processed by the ``clean_spectrum_for_search`` or ``clean_spectrum`` function. If not, an error will be raised.
+
 
 Here are the parameters that each search function takes:
 

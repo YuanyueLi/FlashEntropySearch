@@ -2,5 +2,3 @@ sphinxcontrib-email
 myst_parser
 jsonschema>=3.0.2
 numpy >= 1.18
-cython >= 0.29
-cupy >= 8.3.0

@@ -155,7 +155,7 @@ class FlashEntropySearch:
         if method == "all":
             method = {"identity", "open", "neutral_loss", "hybrid"}
         elif isinstance(method, str):
-            method = set(method)
+            method = {method}
 
         result = {}
         if "identity" in method:
@@ -328,3 +328,15 @@ class FlashEntropySearch:
             self.metadata_loc = np.fromfile(path_data/"metadata_loc.npy", dtype=np.uint64)
 
         return self.entropy_search.read(path_data)
+
+    def save_memory_for_multiprocessing(self):
+        """
+        Save the memory for multiprocessing. This function will move the numpy array in the index to shared memory in order to save memory. 
+
+        This function is not required when you only use one thread to search the MS/MS spectra.
+        When use multiple threads, this function is also not required but highly recommended, as it avoids the memory copy and saves a lot of memory and time.
+
+        :return:    None
+        """
+        self.entropy_search.save_memory_for_multiprocessing()
+

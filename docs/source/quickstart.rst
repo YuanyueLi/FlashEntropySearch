@@ -61,7 +61,7 @@ Then you have your query spectrum looks like this:
 .. code-block:: python
 
     query_spectrum = {"precursor_mz": 150.0,
-                      "peaks": np.array([[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]], dtype=np.float32)}
+                      "peaks": [[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]]}
 
 You can call the ``FlashEntropySearch`` class to search the library like this:
 
@@ -73,7 +73,7 @@ You can call the ``FlashEntropySearch`` class to search the library like this:
     spectral_library = entropy_search.build_index(spectral_library)
     # Step 2: Search the library
     entropy_similarity = entropy_search.search(
-        precursor_mz=query_spectrum['precursor_mz'], peaks=query_spectrum['peaks'])
+        precursor_mz=150.0, peaks=[[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]])
 
 
 After that, you can print the results like this:
@@ -100,6 +100,7 @@ Examples
 
 You can find several examples of how to use the package in the ``examples`` directory, the ``example.py`` script is a good starting point to get familiar with the package.
 
+------------
 
 Want more?
 ==========

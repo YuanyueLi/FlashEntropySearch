@@ -26,6 +26,26 @@ This example will return a list of the top 3 matches with a similarity score gre
 
 ----------------
 
+Get the metadata of a specifical spectrum
+=========================================
+
+After searching the spectral library, you can use the ``__getitem__`` function to get the metadata of a specific spectrum.
+
+For example, you find the 2nd spectrum (start from 0) in the library has highest similarity score. You can call ``entropy_search[2]`` to get the metadata of the 100th spectrum.
+
+.. code-block:: python
+
+    from ms_entropy import FlashEntropySearch
+    entropy_search = FlashEntropySearch()
+    entropy_search.build_index(spectral_library)
+
+    # Get the metadata of the 2nd spectrum
+    metadata = entropy_search[2]
+
+The metadata is extracted and storaged when called the ``build_index`` function. The data is still available even if you save and re-load the index by either the ``pickle`` module or the ``read`` and ``write`` functions.
+
+----------------
+
 Save and load index
 ===================
 

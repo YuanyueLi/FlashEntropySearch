@@ -6,13 +6,13 @@ If you have any question, please send E-mail to :email:`Yuanyue Li <gccli@ucdavi
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Contents
-
 
    self
    quickstart
    install
-   usage
+   basic_usage
    useful_functions
    advanced_usage
    api
