@@ -95,8 +95,8 @@ The result will look like this:
 ------------
 
 
-Examaples
-=========
+Examples
+========
 
 You can find several examples of how to use the package in the ``examples`` directory, the ``example.py`` script is a good starting point to get familiar with the package.
 
