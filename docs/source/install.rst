@@ -56,9 +56,5 @@ To test that the package is working correctly, run the example.py script:
 
 .. code-block:: bash
 
+  cd examples
   python example.py
-
-Examaples
-=========
-
-You can find several examples of how to use the package in the root directory of the repository. Those scripts start with ``example_``. The ``example.py`` script is a good starting point to get familiar with the package.

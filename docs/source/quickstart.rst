@@ -95,8 +95,15 @@ The result will look like this:
 ------------
 
 
+Examaples
+=========
+
+You can find several examples of how to use the package in the ``examples`` directory, the ``example.py`` script is a good starting point to get familiar with the package.
+
+
 Want more?
 ==========
+
 Still have questions? Or want more functions?
 
 We also provided more function tools to help you calculate the spectral similarity, please go to the `Details section <details.html>`_ for more information.
