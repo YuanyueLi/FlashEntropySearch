@@ -24,8 +24,15 @@ The function returns a list of dictionaries, where each dictionary represents a 
 
 This example will return a list of the top 3 matches with a similarity score greater than 0.01.
 
+----------------
+
 Save and load index
 ===================
+
+After you built the index, you can save it to disk and load it later.
+
+Use pickle
+----------
 
 You can use the python's built-in ``pickle`` module to save and load the ``FlashEntropySearch`` object, like this:
 
@@ -38,6 +45,9 @@ You can use the python's built-in ``pickle`` module to save and load the ``Flash
     # And load the index
     with open('path/to/index', 'rb') as f:
         entropy_search = pickle.load(f)
+
+Use ``read`` and ``write`` functions
+------------------------------------
 
 Meanwhile, we also provide ``read`` and ``write`` functions to save and load the index.
 
@@ -64,4 +74,4 @@ If you have a very large spectral library, or your computer's memory is limited,
     entropy_search.read('path/to/index')
 
 
-The index only needs to be built once. After that, you can use the read function to load the index. If you built the index using the low_memory=False mode, you can still load it using the FlashEntropySearch object with either the low_memory=False or low_memory=True mode.
+The index only needs to be built once. After that, you can use the read function to load the index. If you built the index using the ``low_memory=False`` mode, you can still load it using the ``FlashEntropySearch`` object with either the ``low_memory=False`` or ``low_memory=True`` mode.
