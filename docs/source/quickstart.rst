@@ -106,4 +106,4 @@ Want more?
 
 Still have questions? Or want more functions?
 
-We also provided more function tools to help you calculate the spectral similarity, please go to the `Details section <details.html>`_ for more information.
+We also provided more function tools to help you calculate the spectral similarity, please go to the rest sections for more information.
