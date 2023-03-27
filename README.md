@@ -22,8 +22,8 @@ pip install ms_entropy
 
 ```python
 from ms_entropy import FlashEntropySearch
-flash_entropy = FlashEntropySearch()
-flash_entropy.build_index(spectral_library)
+entropy_search = FlashEntropySearch()
+entropy_search.build_index(spectral_library)
 entropy_similarity = entropy_search.search(
     precursor_mz=query_spectrum_precursor_mz, peaks=query_spectrum_peaks)
 ```
