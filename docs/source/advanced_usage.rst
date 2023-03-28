@@ -21,7 +21,7 @@ To archive this, when constructing the ``FlashEntropySearch`` object, you just n
     entropy_search.read()
 
     # Then the reset of the code is the same as usual.
-    entropy_search.build_index(spectral_library)
+    # entropy_search.search(...)
     # ...... (the reset of the code is the same as usual)
 
 The index build in normal mode and low memory mode is the same. If you use the our ``write`` and ``read`` method to save and load the index, you can use the index in normal mode and low memory mode interchangeably. For example, you can build the index in normal mode, save it to disk with ``write`` method. After that, you can initialize the ``FlashEntropySearch`` object with ``path_data`` parameter which points to the index file, and set ``low_memory`` parameter to ``True``, then call the ``read`` method to load the index, and do the rest search as usual.

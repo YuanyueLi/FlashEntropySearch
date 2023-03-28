@@ -35,7 +35,7 @@ class TestFlashEntropySearchWithCpu(unittest.TestCase):
 
         self.flash_entropy = FlashEntropySearch()
         self.flash_entropy.build_index(spectral_library)
-        query_spectrum['peaks'] = self.flash_entropy.clean_spectrum(
+        query_spectrum['peaks'] = self.flash_entropy.clean_spectrum_for_search(
             precursor_mz=query_spectrum['precursor_mz'], peaks=query_spectrum['peaks'])
         self.query_spectrum = query_spectrum
     

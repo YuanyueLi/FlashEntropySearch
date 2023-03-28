@@ -105,6 +105,6 @@ You can find several examples of how to use the package in the ``examples`` dire
 Want more?
 ==========
 
-Still have questions? Or want more functions?
+Still have questions? Want more functions?
 
 We also provided more function tools to help you calculate the spectral similarity, please go to the rest sections for more information.
