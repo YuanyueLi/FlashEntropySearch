@@ -31,7 +31,7 @@ Get the metadata of a specifical spectrum
 
 After searching the spectral library, you can use the ``__getitem__`` function to get the metadata of a specific spectrum.
 
-For example, you find the 2nd spectrum (start from 0) in the library has highest similarity score. You can call ``entropy_search[2]`` to get the metadata of the 100th spectrum.
+For example, you find the 2nd spectrum (start from 0) in the library has highest similarity score. You can call ``entropy_search[2]`` to get the metadata of the 2nd spectrum.
 
 .. code-block:: python
 

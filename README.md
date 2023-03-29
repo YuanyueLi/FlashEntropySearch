@@ -2,7 +2,7 @@
 
 This repository contains the source code for Flash Entropy Search, a method using entropy similarity for fast searching mass spectrometry spectral library.
 
-You can find the benchmark results and the original code used in our manuscript under the `manuscript` folder.
+You can find the benchmark results and the original code used in our manuscript under the `manuscript` folder here: [manuscript](https://github.com/YuanyueLi/FlashEntropySearch/tree/main/manuscript).
 
 We are continuously improving the code, and the latest version of the code can be found under the `ms_entropy` folder.
 
