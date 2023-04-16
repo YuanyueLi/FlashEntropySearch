@@ -37,7 +37,8 @@ To avoid the overhead of initializing the ``FlashEntropySearch`` object in each 
 The following code shows an example how to use the ``multiprocessing`` module to calculate the maximum entropy similarity of 100 query spectra with 4 cores.
 
 .. code-block:: python
-
+    import multiprocessing as mp
+    
     query_spectrum = {"precursor_mz": 150.0,
                       "peaks": np.array([[100.0, 1.0], [101.0, 1.0], [102.0, 1.0]], dtype=np.float32)}
 

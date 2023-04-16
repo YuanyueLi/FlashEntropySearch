@@ -24,7 +24,7 @@ def clean_spectrum(spectrum: np.ndarray,
 
     5. Keep the top max_peak_num peaks, and remove the rest peaks.
     
-    5. Normalize the intensity to sum to 1.
+    6. Normalize the intensity to sum to 1.
 
     :param spectrum: The spectrum, a 2D numpy array with shape (n, 2), the first column is m/z, the second column is intensity.
     :param min_mz: The minimum m/z to keep, if None, all the peaks will be kept. Default is None.
