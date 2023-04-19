@@ -186,7 +186,8 @@ class FlashEntropySearch:
                     precursor_ions_removal_da: float = 1.6,
                     noise_threshold=0.01,
                     min_ms2_difference_in_da: float = 0.05,
-                    max_peak_num: int = None):
+                    max_peak_num: int = None,
+                    clean_spectra: bool = True):
         """
         Set the library spectra for entropy search.
 
@@ -210,6 +211,9 @@ class FlashEntropySearch:
                                 will be removed. Default is 0.01.
         :param min_ms2_difference_in_da:    The minimum difference between two peaks in the MS/MS spectrum. Default is 0.05.
         :param max_peak_num:    The maximum number of peaks in the MS/MS spectrum. Default is None, which means no limit.
+        :param clean_spectra:   If True, the spectra will be cleaned before indexing. Default is True. If ALL spectra in the library are pre-cleaned with the
+                                function `clean_spectrum` or `clean_spectrum_for_search`, set this parameter to False. ALWAYS set this parameter to true if
+                                the spectra are not pre-prepossessed with the function `clean_spectrum` or `clean_spectrum_for_search`.
 
         :return:    If the all_spectra_list is provided, this function will return the sorted spectra list.
         """
@@ -222,12 +226,13 @@ class FlashEntropySearch:
         all_metadata_list = []
         for spec in all_sorted_spectra_list:
             # Clean the peaks
-            spec["peaks"] = self.clean_spectrum_for_search(peaks=spec["peaks"],
-                                                           precursor_mz=spec["precursor_mz"],
-                                                           precursor_ions_removal_da=precursor_ions_removal_da,
-                                                           noise_threshold=noise_threshold,
-                                                           min_ms2_difference_in_da=min_ms2_difference_in_da,
-                                                           max_peak_num=max_peak_num)
+            if clean_spectra:
+                spec["peaks"] = self.clean_spectrum_for_search(peaks=spec["peaks"],
+                                                               precursor_mz=spec["precursor_mz"],
+                                                               precursor_ions_removal_da=precursor_ions_removal_da,
+                                                               noise_threshold=noise_threshold,
+                                                               min_ms2_difference_in_da=min_ms2_difference_in_da,
+                                                               max_peak_num=max_peak_num)
             if len(spec["peaks"]) > 0:
                 all_spectra_list.append(spec)
                 metadata = copy.copy(spec)
@@ -339,4 +344,3 @@ class FlashEntropySearch:
         :return:    None
         """
         self.entropy_search.save_memory_for_multiprocessing()
-
