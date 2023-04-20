@@ -303,7 +303,7 @@ class FlashEntropySearch:
             path_data = Path(path_data)
 
         path_data = Path(path_data)
-        path_data.parent.mkdir(parents=True, exist_ok=True)
+        path_data.mkdir(parents=True, exist_ok=True)
 
         self.precursor_mz_array.tofile(path_data/"precursor_mz.npy")
         self.metadata.tofile(path_data/"metadata.npy")
