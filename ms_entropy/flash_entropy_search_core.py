@@ -513,7 +513,7 @@ class FlashEntropySearchCoreLowMemory(FlashEntropySearchCore):
             for name in self.index_names:
                 self.index.append(np.memmap(self.path_data / f'{name}.npy', dtype=self.index_dtypes[name], mode='r'))
 
-            information = json.load(open(path_data / 'information.json', 'r'))
+            information = json.load(open(self.path_data / 'information.json', 'r'))
             self.mz_index_step = information["mz_index_step"]
             self.total_spectra_num = information["total_spectra_num"]
             self.total_peaks_num = information["total_peaks_num"]
@@ -535,7 +535,7 @@ class FlashEntropySearchCoreLowMemory(FlashEntropySearchCore):
             'total_peaks_num': self.total_peaks_num,
             "max_ms2_tolerance_in_da": self.max_ms2_tolerance_in_da,
         }
-        json.dump(information, open(path_data / 'information.json', 'w'))
+        json.dump(information, open(self.path_data / 'information.json', 'w'))
 
 
 def _convert_numpy_array_to_shared_memory(np_array, array_c_type=None):
