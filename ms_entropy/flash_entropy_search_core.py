@@ -498,7 +498,8 @@ class FlashEntropySearchCoreLowMemory(FlashEntropySearchCore):
         all_nl_mass_idx_start.tofile(self.path_data / 'all_nl_mass_idx_start.npy')
 
         ############## Step 4: Save the index. ##############
-        index = self.read_index()
+        self.write()
+        index = self.read()
         return index
 
     def read(self, path_data=None):
