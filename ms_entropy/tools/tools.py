@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import numpy as np
-from .tools_cython import centroid_spectrum
+from .fast_spectrum import centroid_spectrum
 
 
 def clean_spectrum(spectrum: np.ndarray,

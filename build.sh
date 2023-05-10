@@ -2,7 +2,7 @@
 
 /bin/rm -rf dist ms_entropy.egg-info build
 python setup.py sdist
-twine upload dist/*
+twine upload  --username YaunyueLi dist/*
 /bin/rm -rf dist ms_entropy.egg-info build
 
 # docker build -t build .

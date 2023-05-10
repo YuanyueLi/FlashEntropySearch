@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "ms_entropy.tools_cython",
+        "name": "ms_entropy.tools.fast_spectrum",
         "sources": [
-            "ms_entropy/tools_cython.pyx"
+            "ms_entropy/tools/fast_spectrum.pyx"
         ]
     },
-    "module_name": "ms_entropy.tools_cython"
+    "module_name": "ms_entropy.tools.fast_spectrum"
 }
 END: Cython Metadata */
 
@@ -751,8 +751,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__ms_entropy__tools_cython
-#define __PYX_HAVE_API__ms_entropy__tools_cython
+#define __PYX_HAVE__ms_entropy__tools__fast_spectrum
+#define __PYX_HAVE_API__ms_entropy__tools__fast_spectrum
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -999,7 +999,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "ms_entropy/tools_cython.pyx",
+  "ms_entropy/tools/fast_spectrum.pyx",
   "__init__.pxd",
   "stringsource",
   "type.pxd",
@@ -1298,41 +1298,41 @@ typedef npy_double __pyx_t_5numpy_double_t;
  */
 typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
-/* "ms_entropy/tools_cython.pyx":4
+/* "ms_entropy/tools/fast_spectrum.pyx":4
  * cimport numpy as np
  * 
  * ctypedef np.float32_t float32             # <<<<<<<<<<<<<<
  * ctypedef np.int64_t int_64
  * ctypedef np.int8_t int_8
  */
-typedef __pyx_t_5numpy_float32_t __pyx_t_10ms_entropy_12tools_cython_float32;
+typedef __pyx_t_5numpy_float32_t __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32;
 
-/* "ms_entropy/tools_cython.pyx":5
+/* "ms_entropy/tools/fast_spectrum.pyx":5
  * 
  * ctypedef np.float32_t float32
  * ctypedef np.int64_t int_64             # <<<<<<<<<<<<<<
  * ctypedef np.int8_t int_8
  * ctypedef np.uint32_t uint_32
  */
-typedef __pyx_t_5numpy_int64_t __pyx_t_10ms_entropy_12tools_cython_int_64;
+typedef __pyx_t_5numpy_int64_t __pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64;
 
-/* "ms_entropy/tools_cython.pyx":6
+/* "ms_entropy/tools/fast_spectrum.pyx":6
  * ctypedef np.float32_t float32
  * ctypedef np.int64_t int_64
  * ctypedef np.int8_t int_8             # <<<<<<<<<<<<<<
  * ctypedef np.uint32_t uint_32
  * from libc.math cimport log2,log,pow
  */
-typedef __pyx_t_5numpy_int8_t __pyx_t_10ms_entropy_12tools_cython_int_8;
+typedef __pyx_t_5numpy_int8_t __pyx_t_10ms_entropy_5tools_13fast_spectrum_int_8;
 
-/* "ms_entropy/tools_cython.pyx":7
+/* "ms_entropy/tools/fast_spectrum.pyx":7
  * ctypedef np.int64_t int_64
  * ctypedef np.int8_t int_8
  * ctypedef np.uint32_t uint_32             # <<<<<<<<<<<<<<
  * from libc.math cimport log2,log,pow
  * 
  */
-typedef __pyx_t_5numpy_uint32_t __pyx_t_10ms_entropy_12tools_cython_uint_32;
+typedef __pyx_t_5numpy_uint32_t __pyx_t_10ms_entropy_5tools_13fast_spectrum_uint_32;
 /* Declarations.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -1399,16 +1399,16 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
-struct __pyx_opt_args_10ms_entropy_12tools_cython_centroid_spectrum;
+struct __pyx_opt_args_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum;
 
-/* "ms_entropy/tools_cython.pyx":76
- * 
+/* "ms_entropy/tools/fast_spectrum.pyx":10
+ * from libc.math cimport log2,log,pow
  * 
  * cpdef centroid_spectrum(float32[:,::1] spectrum,ms2_ppm=None, ms2_da=None):             # <<<<<<<<<<<<<<
  *     """
  *     Calculate centroid spectrum from a spectrum.
  */
-struct __pyx_opt_args_10ms_entropy_12tools_cython_centroid_spectrum {
+struct __pyx_opt_args_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum {
   int __pyx_n;
   PyObject *ms2_ppm;
   PyObject *ms2_da;
@@ -1613,21 +1613,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject
 /* GetBuiltinName.proto */
 static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
-
-/* RaiseDoubleKeywords.proto */
-static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
-
-/* ParseKeywords.proto */
-static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
-    PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
-    const char* function_name);
-
-/* None.proto */
-static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
-
 /* MemviewSliceInit.proto */
 #define __Pyx_BUF_MAX_NDIMS %(BUF_MAX_NDIMS)d
 #define __Pyx_MEMVIEW_DIRECT   1
@@ -1756,6 +1741,21 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
+
+/* RaiseDoubleKeywords.proto */
+static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
+
+/* ParseKeywords.proto */
+static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
+    PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
+    const char* function_name);
+
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+
+/* None.proto */
+static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
 
 /* GetItemInt.proto */
 #define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
@@ -2109,11 +2109,6 @@ static int __pyx_slices_overlap(__Pyx_memviewslice *slice1,
 /* Capsule.proto */
 static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
 
-/* GCCDiagnostics.proto */
-#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
-#define __Pyx_HAS_GCC_DIAGNOSTIC
-#endif
-
 /* IsLittleEndian.proto */
 static CYTHON_INLINE int __Pyx_Is_Little_Endian(void);
 
@@ -2138,26 +2133,19 @@ static int __Pyx_ValidateAndInit_memviewslice(
                 PyObject *original_obj);
 
 /* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32__const__(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_uint_32__const__(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_8__const__(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(PyObject *, int writable_flag);
+static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(PyObject *, int writable_flag);
 
 /* MemviewDtypeToObject.proto */
-static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32(const char *itemp);
-static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32(const char *itemp, PyObject *obj);
+static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(const char *itemp);
+static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(const char *itemp, PyObject *obj);
 
 /* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_64(PyObject *, int writable_flag);
+static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64(PyObject *, int writable_flag);
+
+/* GCCDiagnostics.proto */
+#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
+#define __Pyx_HAS_GCC_DIAGNOSTIC
+#endif
 
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
@@ -2264,20 +2252,11 @@ __pyx_memoryview_copy_new_contig(const __Pyx_memviewslice *from_mvs,
                                  size_t sizeof_dtype, int contig_flag,
                                  int dtype_is_object);
 
-/* CIntFromPy.proto */
-static CYTHON_INLINE npy_int64 __Pyx_PyInt_As_npy_int64(PyObject *);
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_int64(npy_int64 value);
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_int8(npy_int8 value);
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
@@ -2345,7 +2324,7 @@ static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
 /* Module declarations from 'libc.math' */
 
-/* Module declarations from 'ms_entropy.tools_cython' */
+/* Module declarations from 'ms_entropy.tools.fast_spectrum' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -2357,12 +2336,9 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static void __pyx_f_10ms_entropy_12tools_cython_entropy_similarity_search_fast(__pyx_t_10ms_entropy_12tools_cython_int_64, __pyx_t_10ms_entropy_12tools_cython_int_64, __pyx_t_10ms_entropy_12tools_cython_float32, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int, __pyx_t_10ms_entropy_12tools_cython_int_64, __pyx_t_10ms_entropy_12tools_cython_int_64, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_apply_weight_to_intensity(__Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_10ms_entropy_12tools_cython_spectral_entropy(__Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_memviewslice, int __pyx_skip_dispatch, struct __pyx_opt_args_10ms_entropy_12tools_cython_centroid_spectrum *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum_c(__Pyx_memviewslice, double, double); /*proto*/
-static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewslice, double, double); /*proto*/
+static PyObject *__pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(__Pyx_memviewslice, int __pyx_skip_dispatch, struct __pyx_opt_args_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum_c(__Pyx_memviewslice, double, double); /*proto*/
+static int __pyx_f_10ms_entropy_5tools_13fast_spectrum_check_centroid_c(__Pyx_memviewslice, double, double); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -2396,16 +2372,13 @@ static void __pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize_t *, Py_
 static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size_t, void *, int); /*proto*/
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_float32 = { "float32", NULL, sizeof(__pyx_t_10ms_entropy_12tools_cython_float32), { 0 }, 0, 'R', 0, 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_float32__const__ = { "const float32", NULL, sizeof(__pyx_t_10ms_entropy_12tools_cython_float32 const ), { 0 }, 0, 'R', 0, 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_uint_32__const__ = { "const uint_32", NULL, sizeof(__pyx_t_10ms_entropy_12tools_cython_uint_32 const ), { 0 }, 0, IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_uint_32 const ) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_uint_32 const ), 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_int_8__const__ = { "const int_8", NULL, sizeof(__pyx_t_10ms_entropy_12tools_cython_int_8 const ), { 0 }, 0, IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_int_8 const ) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_int_8 const ), 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_int_64 = { "int_64", NULL, sizeof(__pyx_t_10ms_entropy_12tools_cython_int_64), { 0 }, 0, IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_int_64) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_10ms_entropy_12tools_cython_int_64), 0 };
-#define __Pyx_MODULE_NAME "ms_entropy.tools_cython"
-extern int __pyx_module_is_main_ms_entropy__tools_cython;
-int __pyx_module_is_main_ms_entropy__tools_cython = 0;
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 = { "float32", NULL, sizeof(__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32), { 0 }, 0, 'R', 0, 0 };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64 = { "int_64", NULL, sizeof(__pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64), { 0 }, 0, IS_UNSIGNED(__pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64), 0 };
+#define __Pyx_MODULE_NAME "ms_entropy.tools.fast_spectrum"
+extern int __pyx_module_is_main_ms_entropy__tools__fast_spectrum;
+int __pyx_module_is_main_ms_entropy__tools__fast_spectrum = 0;
 
-/* Implementation of 'ms_entropy.tools_cython' */
+/* Implementation of 'ms_entropy.tools.fast_spectrum' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ImportError;
 static PyObject *__pyx_builtin_ValueError;
@@ -2423,7 +2396,6 @@ static const char __pyx_k_np[] = "np";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_base[] = "base";
-static const char __pyx_k_copy[] = "copy";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mode[] = "mode";
@@ -2470,7 +2442,6 @@ static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_spectrum[] = "spectrum";
 static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_enumerate[] = "enumerate";
-static const char __pyx_k_intensity[] = "intensity";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_IndexError[] = "IndexError";
@@ -2480,9 +2451,7 @@ static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_ImportError[] = "ImportError";
 static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
-static const char __pyx_k_search_type[] = "search_type";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
-static const char __pyx_k_search_array[] = "search_array";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
@@ -2493,19 +2462,12 @@ static const char __pyx_k_pyx_PickleError[] = "__pyx_PickleError";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_product_mz_idx_max[] = "product_mz_idx_max";
-static const char __pyx_k_product_mz_idx_min[] = "product_mz_idx_min";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
-static const char __pyx_k_mixed_spectra_entropy[] = "mixed_spectra_entropy";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
-static const char __pyx_k_library_spec_idx_array[] = "library_spec_idx_array";
-static const char __pyx_k_search_spectra_idx_max[] = "search_spectra_idx_max";
-static const char __pyx_k_search_spectra_idx_min[] = "search_spectra_idx_min";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
-static const char __pyx_k_library_peaks_intensity[] = "library_peaks_intensity";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
@@ -2562,7 +2524,6 @@ static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
-static PyObject *__pyx_n_s_copy;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_dtype;
 static PyObject *__pyx_n_s_dtype_is_object;
@@ -2578,14 +2539,10 @@ static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
-static PyObject *__pyx_n_s_intensity;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
-static PyObject *__pyx_n_s_library_peaks_intensity;
-static PyObject *__pyx_n_s_library_spec_idx_array;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_memview;
-static PyObject *__pyx_n_s_mixed_spectra_entropy;
 static PyObject *__pyx_n_s_mode;
 static PyObject *__pyx_n_s_ms2_da;
 static PyObject *__pyx_n_s_ms2_ppm;
@@ -2602,8 +2559,6 @@ static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_order;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_pickle;
-static PyObject *__pyx_n_s_product_mz_idx_max;
-static PyObject *__pyx_n_s_product_mz_idx_min;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
 static PyObject *__pyx_n_s_pyx_getbuffer;
@@ -2616,10 +2571,6 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
-static PyObject *__pyx_n_s_search_array;
-static PyObject *__pyx_n_s_search_spectra_idx_max;
-static PyObject *__pyx_n_s_search_spectra_idx_min;
-static PyObject *__pyx_n_s_search_type;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_shape;
@@ -2639,10 +2590,7 @@ static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_entropy_similarity_search_fast(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_max, __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity, __Pyx_memviewslice __pyx_v_mixed_spectra_entropy, __Pyx_memviewslice __pyx_v_library_peaks_intensity, __Pyx_memviewslice __pyx_v_library_spec_idx_array, int __pyx_v_search_type, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_max, __Pyx_memviewslice __pyx_v_search_array); /* proto */
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_2apply_weight_to_intensity(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum); /* proto */
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_4spectral_entropy(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum); /* proto */
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum, PyObject *__pyx_v_ms2_ppm, PyObject *__pyx_v_ms2_da); /* proto */
+static PyObject *__pyx_pf_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum, PyObject *__pyx_v_ms2_ppm, PyObject *__pyx_v_ms2_da); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2728,823 +2676,16 @@ static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_codeobj__29;
 /* Late includes */
 
-/* "ms_entropy/tools_cython.pyx":11
- * 
- * 
- * cpdef void entropy_similarity_search_fast(int_64 product_mz_idx_min, int_64 product_mz_idx_max,             # <<<<<<<<<<<<<<
- *                                     float32 intensity, float32[:] mixed_spectra_entropy,
- *                                     const float32[:] library_peaks_intensity, const uint_32[:] library_spec_idx_array,
- */
-
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_1entropy_similarity_search_fast(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static void __pyx_f_10ms_entropy_12tools_cython_entropy_similarity_search_fast(__pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_max, __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity, __Pyx_memviewslice __pyx_v_mixed_spectra_entropy, __Pyx_memviewslice __pyx_v_library_peaks_intensity, __Pyx_memviewslice __pyx_v_library_spec_idx_array, int __pyx_v_search_type, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_max, __Pyx_memviewslice __pyx_v_search_array, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  __pyx_t_10ms_entropy_12tools_cython_uint_32 __pyx_v_library_spec_idx;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_library_peak_intensity;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity_ab;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity_xlog2x;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_idx;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_t_1;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_t_2;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_t_3;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_t_4;
-  int __pyx_t_5;
-  int __pyx_t_6;
-  size_t __pyx_t_7;
-
-  /* "ms_entropy/tools_cython.pyx":25
- *     cdef uint_32 library_spec_idx
- *     cdef float32 library_peak_intensity, intensity_ab
- *     cdef float32 intensity_xlog2x = intensity * log2(intensity)             # <<<<<<<<<<<<<<
- * 
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):
- */
-  __pyx_v_intensity_xlog2x = (__pyx_v_intensity * log2(__pyx_v_intensity));
-
-  /* "ms_entropy/tools_cython.pyx":27
- *     cdef float32 intensity_xlog2x = intensity * log2(intensity)
- * 
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):             # <<<<<<<<<<<<<<
- *         library_spec_idx = library_spec_idx_array[idx]
- *         if (search_type == 0) or \
- */
-  __pyx_t_1 = __pyx_v_product_mz_idx_max;
-  __pyx_t_2 = __pyx_t_1;
-  for (__pyx_t_3 = __pyx_v_product_mz_idx_min; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
-    __pyx_v_idx = __pyx_t_3;
-
-    /* "ms_entropy/tools_cython.pyx":28
- * 
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):
- *         library_spec_idx = library_spec_idx_array[idx]             # <<<<<<<<<<<<<<
- *         if (search_type == 0) or \
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \
- */
-    __pyx_t_4 = __pyx_v_idx;
-    __pyx_v_library_spec_idx = (*((__pyx_t_10ms_entropy_12tools_cython_uint_32 const  *) ( /* dim=0 */ (__pyx_v_library_spec_idx_array.data + __pyx_t_4 * __pyx_v_library_spec_idx_array.strides[0]) )));
-
-    /* "ms_entropy/tools_cython.pyx":29
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):
- *         library_spec_idx = library_spec_idx_array[idx]
- *         if (search_type == 0) or \             # <<<<<<<<<<<<<<
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \
- *                 (search_type == 2 and search_array[library_spec_idx]):
- */
-    __pyx_t_6 = ((__pyx_v_search_type == 0) != 0);
-    if (!__pyx_t_6) {
-    } else {
-      __pyx_t_5 = __pyx_t_6;
-      goto __pyx_L6_bool_binop_done;
-    }
-
-    /* "ms_entropy/tools_cython.pyx":30
- *         library_spec_idx = library_spec_idx_array[idx]
- *         if (search_type == 0) or \
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \             # <<<<<<<<<<<<<<
- *                 (search_type == 2 and search_array[library_spec_idx]):
- *             # Match this peak
- */
-    __pyx_t_6 = ((__pyx_v_search_type == 1) != 0);
-    if (!__pyx_t_6) {
-      goto __pyx_L8_next_or;
-    } else {
-    }
-    __pyx_t_6 = ((__pyx_v_search_spectra_idx_min <= __pyx_v_library_spec_idx) != 0);
-    if (!__pyx_t_6) {
-      goto __pyx_L8_next_or;
-    } else {
-    }
-    __pyx_t_6 = ((__pyx_v_library_spec_idx < __pyx_v_search_spectra_idx_max) != 0);
-    if (!__pyx_t_6) {
-    } else {
-      __pyx_t_5 = __pyx_t_6;
-      goto __pyx_L6_bool_binop_done;
-    }
-    __pyx_L8_next_or:;
-
-    /* "ms_entropy/tools_cython.pyx":31
- *         if (search_type == 0) or \
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \
- *                 (search_type == 2 and search_array[library_spec_idx]):             # <<<<<<<<<<<<<<
- *             # Match this peak
- *             library_peak_intensity = library_peaks_intensity[idx]
- */
-    __pyx_t_6 = ((__pyx_v_search_type == 2) != 0);
-    if (__pyx_t_6) {
-    } else {
-      __pyx_t_5 = __pyx_t_6;
-      goto __pyx_L6_bool_binop_done;
-    }
-    __pyx_t_7 = __pyx_v_library_spec_idx;
-    __pyx_t_6 = ((*((__pyx_t_10ms_entropy_12tools_cython_int_8 const  *) ( /* dim=0 */ (__pyx_v_search_array.data + __pyx_t_7 * __pyx_v_search_array.strides[0]) ))) != 0);
-    __pyx_t_5 = __pyx_t_6;
-    __pyx_L6_bool_binop_done:;
-
-    /* "ms_entropy/tools_cython.pyx":29
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):
- *         library_spec_idx = library_spec_idx_array[idx]
- *         if (search_type == 0) or \             # <<<<<<<<<<<<<<
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \
- *                 (search_type == 2 and search_array[library_spec_idx]):
- */
-    if (__pyx_t_5) {
-
-      /* "ms_entropy/tools_cython.pyx":33
- *                 (search_type == 2 and search_array[library_spec_idx]):
- *             # Match this peak
- *             library_peak_intensity = library_peaks_intensity[idx]             # <<<<<<<<<<<<<<
- *             intensity_ab = intensity + library_peak_intensity
- * 
- */
-      __pyx_t_4 = __pyx_v_idx;
-      __pyx_v_library_peak_intensity = (*((__pyx_t_10ms_entropy_12tools_cython_float32 const  *) ( /* dim=0 */ (__pyx_v_library_peaks_intensity.data + __pyx_t_4 * __pyx_v_library_peaks_intensity.strides[0]) )));
-
-      /* "ms_entropy/tools_cython.pyx":34
- *             # Match this peak
- *             library_peak_intensity = library_peaks_intensity[idx]
- *             intensity_ab = intensity + library_peak_intensity             # <<<<<<<<<<<<<<
- * 
- *             mixed_spectra_entropy[library_spec_idx] += \
- */
-      __pyx_v_intensity_ab = (__pyx_v_intensity + __pyx_v_library_peak_intensity);
-
-      /* "ms_entropy/tools_cython.pyx":36
- *             intensity_ab = intensity + library_peak_intensity
- * 
- *             mixed_spectra_entropy[library_spec_idx] += \             # <<<<<<<<<<<<<<
- *                 intensity_ab * log2(intensity_ab) - \
- *                 intensity_xlog2x - \
- */
-      __pyx_t_7 = __pyx_v_library_spec_idx;
-      *((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_mixed_spectra_entropy.data + __pyx_t_7 * __pyx_v_mixed_spectra_entropy.strides[0]) )) += (((__pyx_v_intensity_ab * log2(__pyx_v_intensity_ab)) - __pyx_v_intensity_xlog2x) - (__pyx_v_library_peak_intensity * log2(__pyx_v_library_peak_intensity)));
-
-      /* "ms_entropy/tools_cython.pyx":29
- *     for idx in range(product_mz_idx_min, product_mz_idx_max):
- *         library_spec_idx = library_spec_idx_array[idx]
- *         if (search_type == 0) or \             # <<<<<<<<<<<<<<
- *                 (search_type == 1 and search_spectra_idx_min <= library_spec_idx and library_spec_idx < search_spectra_idx_max) or \
- *                 (search_type == 2 and search_array[library_spec_idx]):
- */
-    }
-  }
-
-  /* "ms_entropy/tools_cython.pyx":11
- * 
- * 
- * cpdef void entropy_similarity_search_fast(int_64 product_mz_idx_min, int_64 product_mz_idx_max,             # <<<<<<<<<<<<<<
- *                                     float32 intensity, float32[:] mixed_spectra_entropy,
- *                                     const float32[:] library_peaks_intensity, const uint_32[:] library_spec_idx_array,
- */
-
-  /* function exit code */
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_1entropy_similarity_search_fast(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10ms_entropy_12tools_cython_entropy_similarity_search_fast[] = "\n    The mixed_spectra_entropy will be modified in this function.\n    search_type is 0: search all spectra.\n    search_type is 1: search spectra in the range [search_spectra_idx_min, search_spectra_idx_max).\n    search_type is 2: search spectra in the array search_array with entry equals 1, the length of search_array should be equal to the self.total_spectra_num\n\n    Note: the intensity here should be half of the original intensity.\n    ";
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_1entropy_similarity_search_fast(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_min;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_max;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity;
-  __Pyx_memviewslice __pyx_v_mixed_spectra_entropy = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_v_library_peaks_intensity = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_v_library_spec_idx_array = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_v_search_type;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_min;
-  __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_max;
-  __Pyx_memviewslice __pyx_v_search_array = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("entropy_similarity_search_fast (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_product_mz_idx_min,&__pyx_n_s_product_mz_idx_max,&__pyx_n_s_intensity,&__pyx_n_s_mixed_spectra_entropy,&__pyx_n_s_library_peaks_intensity,&__pyx_n_s_library_spec_idx_array,&__pyx_n_s_search_type,&__pyx_n_s_search_spectra_idx_min,&__pyx_n_s_search_spectra_idx_max,&__pyx_n_s_search_array,0};
-    PyObject* values[10] = {0,0,0,0,0,0,0,0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case 10: values[9] = PyTuple_GET_ITEM(__pyx_args, 9);
-        CYTHON_FALLTHROUGH;
-        case  9: values[8] = PyTuple_GET_ITEM(__pyx_args, 8);
-        CYTHON_FALLTHROUGH;
-        case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
-        CYTHON_FALLTHROUGH;
-        case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-        CYTHON_FALLTHROUGH;
-        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
-        CYTHON_FALLTHROUGH;
-        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-        CYTHON_FALLTHROUGH;
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_product_mz_idx_min)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_product_mz_idx_max)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 1); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_intensity)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 2); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mixed_spectra_entropy)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 3); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  4:
-        if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_library_peaks_intensity)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 4); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  5:
-        if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_library_spec_idx_array)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 5); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  6:
-        if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_search_type)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 6); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  7:
-        if (likely((values[7] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_search_spectra_idx_min)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 7); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  8:
-        if (likely((values[8] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_search_spectra_idx_max)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 8); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  9:
-        if (likely((values[9] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_search_array)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, 9); __PYX_ERR(0, 11, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "entropy_similarity_search_fast") < 0)) __PYX_ERR(0, 11, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 10) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-      values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-      values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
-      values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-      values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
-      values[8] = PyTuple_GET_ITEM(__pyx_args, 8);
-      values[9] = PyTuple_GET_ITEM(__pyx_args, 9);
-    }
-    __pyx_v_product_mz_idx_min = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_product_mz_idx_min == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_product_mz_idx_max = __Pyx_PyInt_As_npy_int64(values[1]); if (unlikely((__pyx_v_product_mz_idx_max == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_intensity = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_intensity == ((npy_float32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12, __pyx_L3_error)
-    __pyx_v_mixed_spectra_entropy = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32(values[3], PyBUF_WRITABLE); if (unlikely(!__pyx_v_mixed_spectra_entropy.memview)) __PYX_ERR(0, 12, __pyx_L3_error)
-    __pyx_v_library_peaks_intensity = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32__const__(values[4], 0); if (unlikely(!__pyx_v_library_peaks_intensity.memview)) __PYX_ERR(0, 13, __pyx_L3_error)
-    __pyx_v_library_spec_idx_array = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_uint_32__const__(values[5], 0); if (unlikely(!__pyx_v_library_spec_idx_array.memview)) __PYX_ERR(0, 13, __pyx_L3_error)
-    __pyx_v_search_type = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_search_type == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L3_error)
-    __pyx_v_search_spectra_idx_min = __Pyx_PyInt_As_npy_int64(values[7]); if (unlikely((__pyx_v_search_spectra_idx_min == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L3_error)
-    __pyx_v_search_spectra_idx_max = __Pyx_PyInt_As_npy_int64(values[8]); if (unlikely((__pyx_v_search_spectra_idx_max == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L3_error)
-    __pyx_v_search_array = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_8__const__(values[9], 0); if (unlikely(!__pyx_v_search_array.memview)) __PYX_ERR(0, 14, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("entropy_similarity_search_fast", 1, 10, 10, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("ms_entropy.tools_cython.entropy_similarity_search_fast", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10ms_entropy_12tools_cython_entropy_similarity_search_fast(__pyx_self, __pyx_v_product_mz_idx_min, __pyx_v_product_mz_idx_max, __pyx_v_intensity, __pyx_v_mixed_spectra_entropy, __pyx_v_library_peaks_intensity, __pyx_v_library_spec_idx_array, __pyx_v_search_type, __pyx_v_search_spectra_idx_min, __pyx_v_search_spectra_idx_max, __pyx_v_search_array);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_entropy_similarity_search_fast(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_product_mz_idx_max, __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity, __Pyx_memviewslice __pyx_v_mixed_spectra_entropy, __Pyx_memviewslice __pyx_v_library_peaks_intensity, __Pyx_memviewslice __pyx_v_library_spec_idx_array, int __pyx_v_search_type, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_min, __pyx_t_10ms_entropy_12tools_cython_int_64 __pyx_v_search_spectra_idx_max, __Pyx_memviewslice __pyx_v_search_array) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("entropy_similarity_search_fast", 0);
-  __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_mixed_spectra_entropy.memview)) { __Pyx_RaiseUnboundLocalError("mixed_spectra_entropy"); __PYX_ERR(0, 11, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_library_peaks_intensity.memview)) { __Pyx_RaiseUnboundLocalError("library_peaks_intensity"); __PYX_ERR(0, 11, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_library_spec_idx_array.memview)) { __Pyx_RaiseUnboundLocalError("library_spec_idx_array"); __PYX_ERR(0, 11, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_search_array.memview)) { __Pyx_RaiseUnboundLocalError("search_array"); __PYX_ERR(0, 11, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_10ms_entropy_12tools_cython_entropy_similarity_search_fast(__pyx_v_product_mz_idx_min, __pyx_v_product_mz_idx_max, __pyx_v_intensity, __pyx_v_mixed_spectra_entropy, __pyx_v_library_peaks_intensity, __pyx_v_library_spec_idx_array, __pyx_v_search_type, __pyx_v_search_spectra_idx_min, __pyx_v_search_spectra_idx_max, __pyx_v_search_array, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.entropy_similarity_search_fast", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_mixed_spectra_entropy, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_v_library_peaks_intensity, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_v_library_spec_idx_array, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_v_search_array, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "ms_entropy/tools_cython.pyx":42
- * 
- * 
- * cpdef apply_weight_to_intensity(float32[:,::1] spectrum):             # <<<<<<<<<<<<<<
- *     """
- *     Apply the weight to the intensity.
- */
-
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_3apply_weight_to_intensity(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum); /*proto*/
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_apply_weight_to_intensity(__Pyx_memviewslice __pyx_v_spectrum, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  double __pyx_v_entropy;
-  double __pyx_v_weight;
-  double __pyx_v_intensity_sum;
-  __Pyx_memviewslice __pyx_v_spectrum_weighted = { 0, 0, { 0 }, { 0 }, { 0 } };
-  Py_ssize_t __pyx_v_i;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  __Pyx_memviewslice __pyx_t_5 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_t_6;
-  Py_ssize_t __pyx_t_7;
-  Py_ssize_t __pyx_t_8;
-  Py_ssize_t __pyx_t_9;
-  Py_ssize_t __pyx_t_10;
-  Py_ssize_t __pyx_t_11;
-  Py_ssize_t __pyx_t_12;
-  Py_ssize_t __pyx_t_13;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("apply_weight_to_intensity", 0);
-
-  /* "ms_entropy/tools_cython.pyx":47
- *     The spectrum is a 2D array like: [[m/z, intensity], [m/z, intensity], ...]
- *     """
- *     cdef double entropy=spectral_entropy(spectrum)             # <<<<<<<<<<<<<<
- *     cdef double weight, intensity_sum
- *     cdef float32[:,::1] spectrum_weighted = np.copy(spectrum)
- */
-  __pyx_v_entropy = __pyx_f_10ms_entropy_12tools_cython_spectral_entropy(__pyx_v_spectrum, 0);
-
-  /* "ms_entropy/tools_cython.pyx":49
- *     cdef double entropy=spectral_entropy(spectrum)
- *     cdef double weight, intensity_sum
- *     cdef float32[:,::1] spectrum_weighted = np.copy(spectrum)             # <<<<<<<<<<<<<<
- *     if entropy<3:
- *         weight = 0.25 + 0.25 * entropy
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_spectrum, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_spectrum_weighted = __pyx_t_5;
-  __pyx_t_5.memview = NULL;
-  __pyx_t_5.data = NULL;
-
-  /* "ms_entropy/tools_cython.pyx":50
- *     cdef double weight, intensity_sum
- *     cdef float32[:,::1] spectrum_weighted = np.copy(spectrum)
- *     if entropy<3:             # <<<<<<<<<<<<<<
- *         weight = 0.25 + 0.25 * entropy
- *         intensity_sum = 0.
- */
-  __pyx_t_6 = ((__pyx_v_entropy < 3.0) != 0);
-  if (__pyx_t_6) {
-
-    /* "ms_entropy/tools_cython.pyx":51
- *     cdef float32[:,::1] spectrum_weighted = np.copy(spectrum)
- *     if entropy<3:
- *         weight = 0.25 + 0.25 * entropy             # <<<<<<<<<<<<<<
- *         intensity_sum = 0.
- *         for i in range(spectrum_weighted.shape[0]):
- */
-    __pyx_v_weight = (0.25 + (0.25 * __pyx_v_entropy));
-
-    /* "ms_entropy/tools_cython.pyx":52
- *     if entropy<3:
- *         weight = 0.25 + 0.25 * entropy
- *         intensity_sum = 0.             # <<<<<<<<<<<<<<
- *         for i in range(spectrum_weighted.shape[0]):
- *             spectrum_weighted[i,1] = pow(spectrum_weighted[i,1],weight)
- */
-    __pyx_v_intensity_sum = 0.;
-
-    /* "ms_entropy/tools_cython.pyx":53
- *         weight = 0.25 + 0.25 * entropy
- *         intensity_sum = 0.
- *         for i in range(spectrum_weighted.shape[0]):             # <<<<<<<<<<<<<<
- *             spectrum_weighted[i,1] = pow(spectrum_weighted[i,1],weight)
- *             intensity_sum += spectrum_weighted[i,1]
- */
-    __pyx_t_7 = (__pyx_v_spectrum_weighted.shape[0]);
-    __pyx_t_8 = __pyx_t_7;
-    for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-      __pyx_v_i = __pyx_t_9;
-
-      /* "ms_entropy/tools_cython.pyx":54
- *         intensity_sum = 0.
- *         for i in range(spectrum_weighted.shape[0]):
- *             spectrum_weighted[i,1] = pow(spectrum_weighted[i,1],weight)             # <<<<<<<<<<<<<<
- *             intensity_sum += spectrum_weighted[i,1]
- * 
- */
-      __pyx_t_10 = __pyx_v_i;
-      __pyx_t_11 = 1;
-      __pyx_t_12 = __pyx_v_i;
-      __pyx_t_13 = 1;
-      *((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum_weighted.data + __pyx_t_12 * __pyx_v_spectrum_weighted.strides[0]) )) + __pyx_t_13)) )) = pow((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum_weighted.data + __pyx_t_10 * __pyx_v_spectrum_weighted.strides[0]) )) + __pyx_t_11)) ))), __pyx_v_weight);
-
-      /* "ms_entropy/tools_cython.pyx":55
- *         for i in range(spectrum_weighted.shape[0]):
- *             spectrum_weighted[i,1] = pow(spectrum_weighted[i,1],weight)
- *             intensity_sum += spectrum_weighted[i,1]             # <<<<<<<<<<<<<<
- * 
- *         if intensity_sum>0:
- */
-      __pyx_t_11 = __pyx_v_i;
-      __pyx_t_10 = 1;
-      __pyx_v_intensity_sum = (__pyx_v_intensity_sum + (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum_weighted.data + __pyx_t_11 * __pyx_v_spectrum_weighted.strides[0]) )) + __pyx_t_10)) ))));
-    }
-
-    /* "ms_entropy/tools_cython.pyx":57
- *             intensity_sum += spectrum_weighted[i,1]
- * 
- *         if intensity_sum>0:             # <<<<<<<<<<<<<<
- *             for i in range(spectrum_weighted.shape[0]):
- *                 spectrum_weighted[i,1] /= intensity_sum
- */
-    __pyx_t_6 = ((__pyx_v_intensity_sum > 0.0) != 0);
-    if (__pyx_t_6) {
-
-      /* "ms_entropy/tools_cython.pyx":58
- * 
- *         if intensity_sum>0:
- *             for i in range(spectrum_weighted.shape[0]):             # <<<<<<<<<<<<<<
- *                 spectrum_weighted[i,1] /= intensity_sum
- * 
- */
-      __pyx_t_7 = (__pyx_v_spectrum_weighted.shape[0]);
-      __pyx_t_8 = __pyx_t_7;
-      for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-        __pyx_v_i = __pyx_t_9;
-
-        /* "ms_entropy/tools_cython.pyx":59
- *         if intensity_sum>0:
- *             for i in range(spectrum_weighted.shape[0]):
- *                 spectrum_weighted[i,1] /= intensity_sum             # <<<<<<<<<<<<<<
- * 
- *     return spectrum_weighted
- */
-        __pyx_t_10 = __pyx_v_i;
-        __pyx_t_11 = 1;
-        *((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum_weighted.data + __pyx_t_10 * __pyx_v_spectrum_weighted.strides[0]) )) + __pyx_t_11)) )) /= __pyx_v_intensity_sum;
-      }
-
-      /* "ms_entropy/tools_cython.pyx":57
- *             intensity_sum += spectrum_weighted[i,1]
- * 
- *         if intensity_sum>0:             # <<<<<<<<<<<<<<
- *             for i in range(spectrum_weighted.shape[0]):
- *                 spectrum_weighted[i,1] /= intensity_sum
- */
-    }
-
-    /* "ms_entropy/tools_cython.pyx":50
- *     cdef double weight, intensity_sum
- *     cdef float32[:,::1] spectrum_weighted = np.copy(spectrum)
- *     if entropy<3:             # <<<<<<<<<<<<<<
- *         weight = 0.25 + 0.25 * entropy
- *         intensity_sum = 0.
- */
-  }
-
-  /* "ms_entropy/tools_cython.pyx":61
- *                 spectrum_weighted[i,1] /= intensity_sum
- * 
- *     return spectrum_weighted             # <<<<<<<<<<<<<<
- * 
- * cpdef double spectral_entropy(float32[:,::1] spectrum) nogil:
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_spectrum_weighted, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "ms_entropy/tools_cython.pyx":42
- * 
- * 
- * cpdef apply_weight_to_intensity(float32[:,::1] spectrum):             # <<<<<<<<<<<<<<
- *     """
- *     Apply the weight to the intensity.
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_5, 1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.apply_weight_to_intensity", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum_weighted, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_3apply_weight_to_intensity(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum); /*proto*/
-static char __pyx_doc_10ms_entropy_12tools_cython_2apply_weight_to_intensity[] = "\n    Apply the weight to the intensity.\n    The spectrum is a 2D array like: [[m/z, intensity], [m/z, intensity], ...]\n    ";
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_3apply_weight_to_intensity(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum) {
-  __Pyx_memviewslice __pyx_v_spectrum = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("apply_weight_to_intensity (wrapper)", 0);
-  assert(__pyx_arg_spectrum); {
-    __pyx_v_spectrum = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(__pyx_arg_spectrum, PyBUF_WRITABLE); if (unlikely(!__pyx_v_spectrum.memview)) __PYX_ERR(0, 42, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("ms_entropy.tools_cython.apply_weight_to_intensity", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10ms_entropy_12tools_cython_2apply_weight_to_intensity(__pyx_self, __pyx_v_spectrum);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_2apply_weight_to_intensity(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("apply_weight_to_intensity", 0);
-  __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_spectrum.memview)) { __Pyx_RaiseUnboundLocalError("spectrum"); __PYX_ERR(0, 42, __pyx_L1_error) }
-  __pyx_t_1 = __pyx_f_10ms_entropy_12tools_cython_apply_weight_to_intensity(__pyx_v_spectrum, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.apply_weight_to_intensity", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "ms_entropy/tools_cython.pyx":63
- *     return spectrum_weighted
- * 
- * cpdef double spectral_entropy(float32[:,::1] spectrum) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Compute the spectral entropy of a spectrum. The intensity need to be pre-normalized, the function will not do it.
- */
-
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_5spectral_entropy(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum); /*proto*/
-static double __pyx_f_10ms_entropy_12tools_cython_spectral_entropy(__Pyx_memviewslice __pyx_v_spectrum, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  double __pyx_v_entropy;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity;
-  Py_ssize_t __pyx_v_i;
-  double __pyx_r;
-  Py_ssize_t __pyx_t_1;
-  Py_ssize_t __pyx_t_2;
-  Py_ssize_t __pyx_t_3;
-  Py_ssize_t __pyx_t_4;
-  Py_ssize_t __pyx_t_5;
-  int __pyx_t_6;
-
-  /* "ms_entropy/tools_cython.pyx":67
- *     Compute the spectral entropy of a spectrum. The intensity need to be pre-normalized, the function will not do it.
- *     """
- *     cdef double entropy=0.             # <<<<<<<<<<<<<<
- *     cdef float32 intensity
- *     for i in range(spectrum.shape[0]):
- */
-  __pyx_v_entropy = 0.;
-
-  /* "ms_entropy/tools_cython.pyx":69
- *     cdef double entropy=0.
- *     cdef float32 intensity
- *     for i in range(spectrum.shape[0]):             # <<<<<<<<<<<<<<
- *         intensity=spectrum[i,1]
- *         if intensity>0:
- */
-  __pyx_t_1 = (__pyx_v_spectrum.shape[0]);
-  __pyx_t_2 = __pyx_t_1;
-  for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
-    __pyx_v_i = __pyx_t_3;
-
-    /* "ms_entropy/tools_cython.pyx":70
- *     cdef float32 intensity
- *     for i in range(spectrum.shape[0]):
- *         intensity=spectrum[i,1]             # <<<<<<<<<<<<<<
- *         if intensity>0:
- *             entropy+=-intensity*log(intensity)
- */
-    __pyx_t_4 = __pyx_v_i;
-    __pyx_t_5 = 1;
-    __pyx_v_intensity = (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_4 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_5)) )));
-
-    /* "ms_entropy/tools_cython.pyx":71
- *     for i in range(spectrum.shape[0]):
- *         intensity=spectrum[i,1]
- *         if intensity>0:             # <<<<<<<<<<<<<<
- *             entropy+=-intensity*log(intensity)
- *     return entropy
- */
-    __pyx_t_6 = ((__pyx_v_intensity > 0.0) != 0);
-    if (__pyx_t_6) {
-
-      /* "ms_entropy/tools_cython.pyx":72
- *         intensity=spectrum[i,1]
- *         if intensity>0:
- *             entropy+=-intensity*log(intensity)             # <<<<<<<<<<<<<<
- *     return entropy
- * 
- */
-      __pyx_v_entropy = (__pyx_v_entropy + ((-__pyx_v_intensity) * log(__pyx_v_intensity)));
-
-      /* "ms_entropy/tools_cython.pyx":71
- *     for i in range(spectrum.shape[0]):
- *         intensity=spectrum[i,1]
- *         if intensity>0:             # <<<<<<<<<<<<<<
- *             entropy+=-intensity*log(intensity)
- *     return entropy
- */
-    }
-  }
-
-  /* "ms_entropy/tools_cython.pyx":73
- *         if intensity>0:
- *             entropy+=-intensity*log(intensity)
- *     return entropy             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = __pyx_v_entropy;
-  goto __pyx_L0;
-
-  /* "ms_entropy/tools_cython.pyx":63
- *     return spectrum_weighted
- * 
- * cpdef double spectral_entropy(float32[:,::1] spectrum) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Compute the spectral entropy of a spectrum. The intensity need to be pre-normalized, the function will not do it.
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_5spectral_entropy(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum); /*proto*/
-static char __pyx_doc_10ms_entropy_12tools_cython_4spectral_entropy[] = "\n    Compute the spectral entropy of a spectrum. The intensity need to be pre-normalized, the function will not do it.\n    ";
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_5spectral_entropy(PyObject *__pyx_self, PyObject *__pyx_arg_spectrum) {
-  __Pyx_memviewslice __pyx_v_spectrum = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("spectral_entropy (wrapper)", 0);
-  assert(__pyx_arg_spectrum); {
-    __pyx_v_spectrum = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(__pyx_arg_spectrum, PyBUF_WRITABLE); if (unlikely(!__pyx_v_spectrum.memview)) __PYX_ERR(0, 63, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("ms_entropy.tools_cython.spectral_entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10ms_entropy_12tools_cython_4spectral_entropy(__pyx_self, __pyx_v_spectrum);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_4spectral_entropy(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("spectral_entropy", 0);
-  __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_spectrum.memview)) { __Pyx_RaiseUnboundLocalError("spectrum"); __PYX_ERR(0, 63, __pyx_L1_error) }
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_10ms_entropy_12tools_cython_spectral_entropy(__pyx_v_spectrum, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.spectral_entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "ms_entropy/tools_cython.pyx":76
- * 
+/* "ms_entropy/tools/fast_spectrum.pyx":10
+ * from libc.math cimport log2,log,pow
  * 
  * cpdef centroid_spectrum(float32[:,::1] spectrum,ms2_ppm=None, ms2_da=None):             # <<<<<<<<<<<<<<
  *     """
  *     Calculate centroid spectrum from a spectrum.
  */
 
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_memviewslice __pyx_v_spectrum, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_10ms_entropy_12tools_cython_centroid_spectrum *__pyx_optional_args) {
+static PyObject *__pyx_pw_10ms_entropy_5tools_13fast_spectrum_1centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(__Pyx_memviewslice __pyx_v_spectrum, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum *__pyx_optional_args) {
   PyObject *__pyx_v_ms2_ppm = ((PyObject *)Py_None);
   PyObject *__pyx_v_ms2_da = ((PyObject *)Py_None);
   int __pyx_v_need_centroid;
@@ -3575,7 +2716,7 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
   __Pyx_INCREF(__pyx_v_ms2_ppm);
   __Pyx_INCREF(__pyx_v_ms2_da);
 
-  /* "ms_entropy/tools_cython.pyx":88
+  /* "ms_entropy/tools/fast_spectrum.pyx":22
  *     :param ms2_da: the mass accuracy in Da.
  *     """
  *     if ms2_da is None:             # <<<<<<<<<<<<<<
@@ -3586,7 +2727,7 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "ms_entropy/tools_cython.pyx":89
+    /* "ms_entropy/tools/fast_spectrum.pyx":23
  *     """
  *     if ms2_da is None:
  *         ms2_da = -1.             # <<<<<<<<<<<<<<
@@ -3596,7 +2737,7 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
     __Pyx_INCREF(__pyx_float_neg_1_);
     __Pyx_DECREF_SET(__pyx_v_ms2_da, __pyx_float_neg_1_);
 
-    /* "ms_entropy/tools_cython.pyx":88
+    /* "ms_entropy/tools/fast_spectrum.pyx":22
  *     :param ms2_da: the mass accuracy in Da.
  *     """
  *     if ms2_da is None:             # <<<<<<<<<<<<<<
@@ -3606,7 +2747,7 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
     goto __pyx_L3;
   }
 
-  /* "ms_entropy/tools_cython.pyx":91
+  /* "ms_entropy/tools/fast_spectrum.pyx":25
  *         ms2_da = -1.
  *     else:
  *         ms2_ppm = -1.             # <<<<<<<<<<<<<<
@@ -3619,18 +2760,18 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
   }
   __pyx_L3:;
 
-  /* "ms_entropy/tools_cython.pyx":94
+  /* "ms_entropy/tools/fast_spectrum.pyx":28
  * 
  *     # Check whether the spectrum needs to be centroided or not.
  *     cdef int need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)             # <<<<<<<<<<<<<<
  *     while need_centroid:
  *         spectrum = centroid_spectrum_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  */
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
-  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
-  __pyx_v_need_centroid = __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__pyx_v_spectrum, __pyx_t_3, __pyx_t_4);
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_v_need_centroid = __pyx_f_10ms_entropy_5tools_13fast_spectrum_check_centroid_c(__pyx_v_spectrum, __pyx_t_3, __pyx_t_4);
 
-  /* "ms_entropy/tools_cython.pyx":95
+  /* "ms_entropy/tools/fast_spectrum.pyx":29
  *     # Check whether the spectrum needs to be centroided or not.
  *     cdef int need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *     while need_centroid:             # <<<<<<<<<<<<<<
@@ -3641,37 +2782,37 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
     __pyx_t_2 = (__pyx_v_need_centroid != 0);
     if (!__pyx_t_2) break;
 
-    /* "ms_entropy/tools_cython.pyx":96
+    /* "ms_entropy/tools/fast_spectrum.pyx":30
  *     cdef int need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *     while need_centroid:
  *         spectrum = centroid_spectrum_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)             # <<<<<<<<<<<<<<
  *         need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *     return np.asarray(spectrum)
  */
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
-    __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
-    __pyx_t_5 = __pyx_f_10ms_entropy_12tools_cython_centroid_spectrum_c(__pyx_v_spectrum, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum_c(__pyx_v_spectrum, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(__pyx_t_5, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(__pyx_t_5, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum, 1);
     __pyx_v_spectrum = __pyx_t_6;
     __pyx_t_6.memview = NULL;
     __pyx_t_6.data = NULL;
 
-    /* "ms_entropy/tools_cython.pyx":97
+    /* "ms_entropy/tools/fast_spectrum.pyx":31
  *     while need_centroid:
  *         spectrum = centroid_spectrum_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *         need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)             # <<<<<<<<<<<<<<
  *     return np.asarray(spectrum)
  * 
  */
-    __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
-    __pyx_v_need_centroid = __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__pyx_v_spectrum, __pyx_t_3, __pyx_t_4);
+    __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_ppm); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_v_ms2_da); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
+    __pyx_v_need_centroid = __pyx_f_10ms_entropy_5tools_13fast_spectrum_check_centroid_c(__pyx_v_spectrum, __pyx_t_3, __pyx_t_4);
   }
 
-  /* "ms_entropy/tools_cython.pyx":98
+  /* "ms_entropy/tools/fast_spectrum.pyx":32
  *         spectrum = centroid_spectrum_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *         need_centroid = check_centroid_c(spectrum, ms2_ppm=ms2_ppm, ms2_da=ms2_da)
  *     return np.asarray(spectrum)             # <<<<<<<<<<<<<<
@@ -3679,12 +2820,12 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
  * cdef centroid_spectrum_c(float32[:,::1] spec,double ms2_ppm, double ms2_da):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_asarray); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_asarray); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_spectrum, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_spectrum, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_9 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -3699,15 +2840,15 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
   __pyx_t_5 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_9, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "ms_entropy/tools_cython.pyx":76
- * 
+  /* "ms_entropy/tools/fast_spectrum.pyx":10
+ * from libc.math cimport log2,log,pow
  * 
  * cpdef centroid_spectrum(float32[:,::1] spectrum,ms2_ppm=None, ms2_da=None):             # <<<<<<<<<<<<<<
  *     """
@@ -3721,7 +2862,7 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ms_entropy.tools.fast_spectrum.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum, 1);
@@ -3733,9 +2874,9 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__Pyx_mem
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10ms_entropy_12tools_cython_6centroid_spectrum[] = "\n    Calculate centroid spectrum from a spectrum.\n    At least one of the ms2_ppm or ms2_da need be not None. If both ms2_da and ms2_ppm is given, ms2_da will be used.\n\n    :param spectrum: The spectrum should be a 2D array with the first dimension being the m/z values and \n                     the second dimension being the intensity values.\n                     The spectrum need to be sorted by m/z.\n                     The spectrum should be in C order.\n    :param ms2_ppm: the mass accuracy in ppm.\n    :param ms2_da: the mass accuracy in Da.\n    ";
-static PyObject *__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_10ms_entropy_5tools_13fast_spectrum_1centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum[] = "\n    Calculate centroid spectrum from a spectrum.\n    At least one of the ms2_ppm or ms2_da need be not None. If both ms2_da and ms2_ppm is given, ms2_da will be used.\n\n    :param spectrum: The spectrum should be a 2D array with the first dimension being the m/z values and \n                     the second dimension being the intensity values.\n                     The spectrum need to be sorted by m/z.\n                     The spectrum should be in C order.\n    :param ms2_ppm: the mass accuracy in ppm.\n    :param ms2_da: the mass accuracy in Da.\n    ";
+static PyObject *__pyx_pw_10ms_entropy_5tools_13fast_spectrum_1centroid_spectrum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   __Pyx_memviewslice __pyx_v_spectrum = { 0, 0, { 0 }, { 0 }, { 0 } };
   PyObject *__pyx_v_ms2_ppm = 0;
   PyObject *__pyx_v_ms2_da = 0;
@@ -3782,7 +2923,7 @@ static PyObject *__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum(PyObjec
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "centroid_spectrum") < 0)) __PYX_ERR(0, 76, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "centroid_spectrum") < 0)) __PYX_ERR(0, 10, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3795,40 +2936,40 @@ static PyObject *__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum(PyObjec
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_spectrum = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_spectrum.memview)) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_spectrum = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_spectrum.memview)) __PYX_ERR(0, 10, __pyx_L3_error)
     __pyx_v_ms2_ppm = values[1];
     __pyx_v_ms2_da = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("centroid_spectrum", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 76, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("centroid_spectrum", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("ms_entropy.tools_cython.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ms_entropy.tools.fast_spectrum.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(__pyx_self, __pyx_v_spectrum, __pyx_v_ms2_ppm, __pyx_v_ms2_da);
+  __pyx_r = __pyx_pf_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(__pyx_self, __pyx_v_spectrum, __pyx_v_ms2_ppm, __pyx_v_ms2_da);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum, PyObject *__pyx_v_ms2_ppm, PyObject *__pyx_v_ms2_da) {
+static PyObject *__pyx_pf_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_spectrum, PyObject *__pyx_v_ms2_ppm, PyObject *__pyx_v_ms2_da) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_10ms_entropy_12tools_cython_centroid_spectrum __pyx_t_2;
+  struct __pyx_opt_args_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("centroid_spectrum", 0);
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_spectrum.memview)) { __Pyx_RaiseUnboundLocalError("spectrum"); __PYX_ERR(0, 76, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_spectrum.memview)) { __Pyx_RaiseUnboundLocalError("spectrum"); __PYX_ERR(0, 10, __pyx_L1_error) }
   __pyx_t_2.__pyx_n = 2;
   __pyx_t_2.ms2_ppm = __pyx_v_ms2_ppm;
   __pyx_t_2.ms2_da = __pyx_v_ms2_da;
-  __pyx_t_1 = __pyx_f_10ms_entropy_12tools_cython_centroid_spectrum(__pyx_v_spectrum, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum(__pyx_v_spectrum, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3837,7 +2978,7 @@ static PyObject *__pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(CYTHON_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ms_entropy.tools.fast_spectrum.centroid_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_spectrum, 1);
@@ -3846,7 +2987,7 @@ static PyObject *__pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(CYTHON_
   return __pyx_r;
 }
 
-/* "ms_entropy/tools_cython.pyx":100
+/* "ms_entropy/tools/fast_spectrum.pyx":34
  *     return np.asarray(spectrum)
  * 
  * cdef centroid_spectrum_c(float32[:,::1] spec,double ms2_ppm, double ms2_da):             # <<<<<<<<<<<<<<
@@ -3854,7 +2995,7 @@ static PyObject *__pyx_pf_10ms_entropy_12tools_cython_6centroid_spectrum(CYTHON_
  *     Calculate centroid spectrum from a spectrum.
  */
 
-static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum_c(__Pyx_memviewslice __pyx_v_spec, double __pyx_v_ms2_ppm, double __pyx_v_ms2_da) {
+static PyObject *__pyx_f_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum_c(__Pyx_memviewslice __pyx_v_spec, double __pyx_v_ms2_ppm, double __pyx_v_ms2_da) {
   __Pyx_memviewslice __pyx_v_intensity_order = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_memviewslice __pyx_v_spec_new = { 0, 0, { 0 }, { 0 }, { 0 } };
   int __pyx_v_spec_new_i;
@@ -3863,10 +3004,10 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum_c(__Pyx_m
   Py_ssize_t __pyx_v_x;
   Py_ssize_t __pyx_v_i_left;
   Py_ssize_t __pyx_v_i_right;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_mz_delta_left;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_mz_delta_right;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity_sum;
-  __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_v_intensity_weighted_sum;
+  __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 __pyx_v_mz_delta_left;
+  __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 __pyx_v_mz_delta_right;
+  __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 __pyx_v_intensity_sum;
+  __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 __pyx_v_intensity_weighted_sum;
   Py_ssize_t __pyx_v_i_cur;
   PyObject *__pyx_v_spec_result = NULL;
   PyObject *__pyx_r = NULL;
@@ -3894,16 +3035,16 @@ static PyObject *__pyx_f_10ms_entropy_12tools_cython_centroid_spectrum_c(__Pyx_m
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("centroid_spectrum_c", 0);
 
-  /* "ms_entropy/tools_cython.pyx":111
+  /* "ms_entropy/tools/fast_spectrum.pyx":45
  *     :param ms2_da: the mass accuracy in Da.
  *     """
  *     cdef int_64[:] intensity_order = np.argsort(spec[:, 1])             # <<<<<<<<<<<<<<
  *     cdef float32[:,::1] spec_new=np.zeros((spec.shape[0],2),dtype=np.float32,order='C')
  *     cdef int spec_new_i=0
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argsort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argsort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4.data = __pyx_v_spec.data;
@@ -3919,7 +3060,7 @@ __pyx_t_4.strides[0] = __pyx_v_spec.strides[0];
         __pyx_t_4.data += __pyx_tmp_idx * __pyx_tmp_stride;
 }
 
-__pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
+__pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __PYX_XDEC_MEMVIEW(&__pyx_t_4, 1);
   __pyx_t_4.memview = NULL;
@@ -3937,30 +3078,30 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_64(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_intensity_order = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "ms_entropy/tools_cython.pyx":112
+  /* "ms_entropy/tools/fast_spectrum.pyx":46
  *     """
  *     cdef int_64[:] intensity_order = np.argsort(spec[:, 1])
  *     cdef float32[:,::1] spec_new=np.zeros((spec.shape[0],2),dtype=np.float32,order='C')             # <<<<<<<<<<<<<<
  *     cdef int spec_new_i=0
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyInt_FromSsize_t((__pyx_v_spec.shape[0])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t((__pyx_v_spec.shape[0])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -3968,33 +3109,33 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_int_2);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_int_2);
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_order, __pyx_n_u_C) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 112, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_order, __pyx_n_u_C) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_spec_new = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "ms_entropy/tools_cython.pyx":113
+  /* "ms_entropy/tools/fast_spectrum.pyx":47
  *     cdef int_64[:] intensity_order = np.argsort(spec[:, 1])
  *     cdef float32[:,::1] spec_new=np.zeros((spec.shape[0],2),dtype=np.float32,order='C')
  *     cdef int spec_new_i=0             # <<<<<<<<<<<<<<
@@ -4003,7 +3144,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
   __pyx_v_spec_new_i = 0;
 
-  /* "ms_entropy/tools_cython.pyx":120
+  /* "ms_entropy/tools/fast_spectrum.pyx":54
  *     cdef float32 mz_delta_left,mz_delta_right,intensity_sum,intensity_weighted_sum
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
@@ -4018,7 +3159,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
       #endif
       /*try:*/ {
 
-        /* "ms_entropy/tools_cython.pyx":121
+        /* "ms_entropy/tools/fast_spectrum.pyx":55
  * 
  *     with nogil:
  *         for x in range(intensity_order.shape[0]-1, -1, -1):             # <<<<<<<<<<<<<<
@@ -4028,7 +3169,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
         for (__pyx_t_9 = ((__pyx_v_intensity_order.shape[0]) - 1); __pyx_t_9 > -1L; __pyx_t_9-=1) {
           __pyx_v_x = __pyx_t_9;
 
-          /* "ms_entropy/tools_cython.pyx":122
+          /* "ms_entropy/tools/fast_spectrum.pyx":56
  *     with nogil:
  *         for x in range(intensity_order.shape[0]-1, -1, -1):
  *             idx = intensity_order[x]             # <<<<<<<<<<<<<<
@@ -4036,9 +3177,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  *                 mz_delta_allowed = ms2_da
  */
           __pyx_t_10 = __pyx_v_x;
-          __pyx_v_idx = (*((__pyx_t_10ms_entropy_12tools_cython_int_64 *) ( /* dim=0 */ (__pyx_v_intensity_order.data + __pyx_t_10 * __pyx_v_intensity_order.strides[0]) )));
+          __pyx_v_idx = (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64 *) ( /* dim=0 */ (__pyx_v_intensity_order.data + __pyx_t_10 * __pyx_v_intensity_order.strides[0]) )));
 
-          /* "ms_entropy/tools_cython.pyx":123
+          /* "ms_entropy/tools/fast_spectrum.pyx":57
  *         for x in range(intensity_order.shape[0]-1, -1, -1):
  *             idx = intensity_order[x]
  *             if ms2_da >= 0:             # <<<<<<<<<<<<<<
@@ -4048,7 +3189,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
           __pyx_t_11 = ((__pyx_v_ms2_da >= 0.0) != 0);
           if (__pyx_t_11) {
 
-            /* "ms_entropy/tools_cython.pyx":124
+            /* "ms_entropy/tools/fast_spectrum.pyx":58
  *             idx = intensity_order[x]
  *             if ms2_da >= 0:
  *                 mz_delta_allowed = ms2_da             # <<<<<<<<<<<<<<
@@ -4057,7 +3198,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_mz_delta_allowed = __pyx_v_ms2_da;
 
-            /* "ms_entropy/tools_cython.pyx":123
+            /* "ms_entropy/tools/fast_spectrum.pyx":57
  *         for x in range(intensity_order.shape[0]-1, -1, -1):
  *             idx = intensity_order[x]
  *             if ms2_da >= 0:             # <<<<<<<<<<<<<<
@@ -4067,7 +3208,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
             goto __pyx_L8;
           }
 
-          /* "ms_entropy/tools_cython.pyx":126
+          /* "ms_entropy/tools/fast_spectrum.pyx":60
  *                 mz_delta_allowed = ms2_da
  *             else:
  *                 mz_delta_allowed = ms2_ppm * 1e-6 * spec[idx, 0]             # <<<<<<<<<<<<<<
@@ -4077,11 +3218,11 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
           /*else*/ {
             __pyx_t_10 = __pyx_v_idx;
             __pyx_t_12 = 0;
-            __pyx_v_mz_delta_allowed = ((__pyx_v_ms2_ppm * 1e-6) * (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))));
+            __pyx_v_mz_delta_allowed = ((__pyx_v_ms2_ppm * 1e-6) * (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))));
           }
           __pyx_L8:;
 
-          /* "ms_entropy/tools_cython.pyx":128
+          /* "ms_entropy/tools/fast_spectrum.pyx":62
  *                 mz_delta_allowed = ms2_ppm * 1e-6 * spec[idx, 0]
  * 
  *             if spec[idx, 1] > 0:             # <<<<<<<<<<<<<<
@@ -4090,10 +3231,10 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
           __pyx_t_12 = __pyx_v_idx;
           __pyx_t_10 = 1;
-          __pyx_t_11 = (((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))) > 0.0) != 0);
+          __pyx_t_11 = (((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))) > 0.0) != 0);
           if (__pyx_t_11) {
 
-            /* "ms_entropy/tools_cython.pyx":130
+            /* "ms_entropy/tools/fast_spectrum.pyx":64
  *             if spec[idx, 1] > 0:
  *                 # Find left board for current peak
  *                 i_left = idx - 1             # <<<<<<<<<<<<<<
@@ -4102,7 +3243,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_i_left = (__pyx_v_idx - 1);
 
-            /* "ms_entropy/tools_cython.pyx":131
+            /* "ms_entropy/tools/fast_spectrum.pyx":65
  *                 # Find left board for current peak
  *                 i_left = idx - 1
  *                 while i_left >= 0:             # <<<<<<<<<<<<<<
@@ -4113,7 +3254,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_11 = ((__pyx_v_i_left >= 0) != 0);
               if (!__pyx_t_11) break;
 
-              /* "ms_entropy/tools_cython.pyx":132
+              /* "ms_entropy/tools/fast_spectrum.pyx":66
  *                 i_left = idx - 1
  *                 while i_left >= 0:
  *                     mz_delta_left = spec[idx, 0] - spec[i_left, 0]             # <<<<<<<<<<<<<<
@@ -4124,9 +3265,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_12 = 0;
               __pyx_t_13 = __pyx_v_i_left;
               __pyx_t_14 = 0;
-              __pyx_v_mz_delta_left = ((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))) - (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_13 * __pyx_v_spec.strides[0]) )) + __pyx_t_14)) ))));
+              __pyx_v_mz_delta_left = ((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))) - (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_13 * __pyx_v_spec.strides[0]) )) + __pyx_t_14)) ))));
 
-              /* "ms_entropy/tools_cython.pyx":133
+              /* "ms_entropy/tools/fast_spectrum.pyx":67
  *                 while i_left >= 0:
  *                     mz_delta_left = spec[idx, 0] - spec[i_left, 0]
  *                     if mz_delta_left <= mz_delta_allowed:             # <<<<<<<<<<<<<<
@@ -4136,7 +3277,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_11 = ((__pyx_v_mz_delta_left <= __pyx_v_mz_delta_allowed) != 0);
               if (__pyx_t_11) {
 
-                /* "ms_entropy/tools_cython.pyx":134
+                /* "ms_entropy/tools/fast_spectrum.pyx":68
  *                     mz_delta_left = spec[idx, 0] - spec[i_left, 0]
  *                     if mz_delta_left <= mz_delta_allowed:
  *                         i_left -= 1             # <<<<<<<<<<<<<<
@@ -4145,7 +3286,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
                 __pyx_v_i_left = (__pyx_v_i_left - 1);
 
-                /* "ms_entropy/tools_cython.pyx":133
+                /* "ms_entropy/tools/fast_spectrum.pyx":67
  *                 while i_left >= 0:
  *                     mz_delta_left = spec[idx, 0] - spec[i_left, 0]
  *                     if mz_delta_left <= mz_delta_allowed:             # <<<<<<<<<<<<<<
@@ -4155,7 +3296,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
                 goto __pyx_L12;
               }
 
-              /* "ms_entropy/tools_cython.pyx":136
+              /* "ms_entropy/tools/fast_spectrum.pyx":70
  *                         i_left -= 1
  *                     else:
  *                         break             # <<<<<<<<<<<<<<
@@ -4169,7 +3310,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
             }
             __pyx_L11_break:;
 
-            /* "ms_entropy/tools_cython.pyx":137
+            /* "ms_entropy/tools/fast_spectrum.pyx":71
  *                     else:
  *                         break
  *                 i_left += 1             # <<<<<<<<<<<<<<
@@ -4178,7 +3319,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_i_left = (__pyx_v_i_left + 1);
 
-            /* "ms_entropy/tools_cython.pyx":140
+            /* "ms_entropy/tools/fast_spectrum.pyx":74
  * 
  *                 # Find right board for current peak
  *                 i_right = idx + 1             # <<<<<<<<<<<<<<
@@ -4187,7 +3328,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_i_right = (__pyx_v_idx + 1);
 
-            /* "ms_entropy/tools_cython.pyx":141
+            /* "ms_entropy/tools/fast_spectrum.pyx":75
  *                 # Find right board for current peak
  *                 i_right = idx + 1
  *                 while i_right < spec.shape[0]:             # <<<<<<<<<<<<<<
@@ -4198,7 +3339,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_11 = ((__pyx_v_i_right < (__pyx_v_spec.shape[0])) != 0);
               if (!__pyx_t_11) break;
 
-              /* "ms_entropy/tools_cython.pyx":142
+              /* "ms_entropy/tools/fast_spectrum.pyx":76
  *                 i_right = idx + 1
  *                 while i_right < spec.shape[0]:
  *                     mz_delta_right = spec[i_right, 0] - spec[idx, 0]             # <<<<<<<<<<<<<<
@@ -4209,9 +3350,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_13 = 0;
               __pyx_t_12 = __pyx_v_idx;
               __pyx_t_10 = 0;
-              __pyx_v_mz_delta_right = ((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_14 * __pyx_v_spec.strides[0]) )) + __pyx_t_13)) ))) - (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))));
+              __pyx_v_mz_delta_right = ((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_14 * __pyx_v_spec.strides[0]) )) + __pyx_t_13)) ))) - (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))));
 
-              /* "ms_entropy/tools_cython.pyx":143
+              /* "ms_entropy/tools/fast_spectrum.pyx":77
  *                 while i_right < spec.shape[0]:
  *                     mz_delta_right = spec[i_right, 0] - spec[idx, 0]
  *                     if mz_delta_right <= mz_delta_allowed:             # <<<<<<<<<<<<<<
@@ -4221,7 +3362,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_11 = ((__pyx_v_mz_delta_right <= __pyx_v_mz_delta_allowed) != 0);
               if (__pyx_t_11) {
 
-                /* "ms_entropy/tools_cython.pyx":144
+                /* "ms_entropy/tools/fast_spectrum.pyx":78
  *                     mz_delta_right = spec[i_right, 0] - spec[idx, 0]
  *                     if mz_delta_right <= mz_delta_allowed:
  *                         i_right += 1             # <<<<<<<<<<<<<<
@@ -4230,7 +3371,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
                 __pyx_v_i_right = (__pyx_v_i_right + 1);
 
-                /* "ms_entropy/tools_cython.pyx":143
+                /* "ms_entropy/tools/fast_spectrum.pyx":77
  *                 while i_right < spec.shape[0]:
  *                     mz_delta_right = spec[i_right, 0] - spec[idx, 0]
  *                     if mz_delta_right <= mz_delta_allowed:             # <<<<<<<<<<<<<<
@@ -4240,7 +3381,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
                 goto __pyx_L15;
               }
 
-              /* "ms_entropy/tools_cython.pyx":146
+              /* "ms_entropy/tools/fast_spectrum.pyx":80
  *                         i_right += 1
  *                     else:
  *                         break             # <<<<<<<<<<<<<<
@@ -4254,7 +3395,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
             }
             __pyx_L14_break:;
 
-            /* "ms_entropy/tools_cython.pyx":149
+            /* "ms_entropy/tools/fast_spectrum.pyx":83
  * 
  *                 # Merge those peaks
  *                 intensity_sum = 0             # <<<<<<<<<<<<<<
@@ -4263,7 +3404,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_intensity_sum = 0.0;
 
-            /* "ms_entropy/tools_cython.pyx":150
+            /* "ms_entropy/tools/fast_spectrum.pyx":84
  *                 # Merge those peaks
  *                 intensity_sum = 0
  *                 intensity_weighted_sum = 0             # <<<<<<<<<<<<<<
@@ -4272,7 +3413,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_intensity_weighted_sum = 0.0;
 
-            /* "ms_entropy/tools_cython.pyx":151
+            /* "ms_entropy/tools/fast_spectrum.pyx":85
  *                 intensity_sum = 0
  *                 intensity_weighted_sum = 0
  *                 for i_cur in range(i_left, i_right):             # <<<<<<<<<<<<<<
@@ -4284,7 +3425,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
             for (__pyx_t_17 = __pyx_v_i_left; __pyx_t_17 < __pyx_t_16; __pyx_t_17+=1) {
               __pyx_v_i_cur = __pyx_t_17;
 
-              /* "ms_entropy/tools_cython.pyx":152
+              /* "ms_entropy/tools/fast_spectrum.pyx":86
  *                 intensity_weighted_sum = 0
  *                 for i_cur in range(i_left, i_right):
  *                     intensity_sum += spec[i_cur, 1]             # <<<<<<<<<<<<<<
@@ -4293,9 +3434,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
               __pyx_t_10 = __pyx_v_i_cur;
               __pyx_t_12 = 1;
-              __pyx_v_intensity_sum = (__pyx_v_intensity_sum + (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))));
+              __pyx_v_intensity_sum = (__pyx_v_intensity_sum + (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_10 * __pyx_v_spec.strides[0]) )) + __pyx_t_12)) ))));
 
-              /* "ms_entropy/tools_cython.pyx":153
+              /* "ms_entropy/tools/fast_spectrum.pyx":87
  *                 for i_cur in range(i_left, i_right):
  *                     intensity_sum += spec[i_cur, 1]
  *                     intensity_weighted_sum += spec[i_cur, 0]*spec[i_cur, 1]             # <<<<<<<<<<<<<<
@@ -4306,10 +3447,10 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
               __pyx_t_10 = 0;
               __pyx_t_13 = __pyx_v_i_cur;
               __pyx_t_14 = 1;
-              __pyx_v_intensity_weighted_sum = (__pyx_v_intensity_weighted_sum + ((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))) * (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_13 * __pyx_v_spec.strides[0]) )) + __pyx_t_14)) )))));
+              __pyx_v_intensity_weighted_sum = (__pyx_v_intensity_weighted_sum + ((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_12 * __pyx_v_spec.strides[0]) )) + __pyx_t_10)) ))) * (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec.data + __pyx_t_13 * __pyx_v_spec.strides[0]) )) + __pyx_t_14)) )))));
             }
 
-            /* "ms_entropy/tools_cython.pyx":155
+            /* "ms_entropy/tools/fast_spectrum.pyx":89
  *                     intensity_weighted_sum += spec[i_cur, 0]*spec[i_cur, 1]
  * 
  *                 spec_new[spec_new_i, 0] = intensity_weighted_sum / intensity_sum             # <<<<<<<<<<<<<<
@@ -4318,9 +3459,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_t_14 = __pyx_v_spec_new_i;
             __pyx_t_13 = 0;
-            *((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec_new.data + __pyx_t_14 * __pyx_v_spec_new.strides[0]) )) + __pyx_t_13)) )) = (__pyx_v_intensity_weighted_sum / __pyx_v_intensity_sum);
+            *((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec_new.data + __pyx_t_14 * __pyx_v_spec_new.strides[0]) )) + __pyx_t_13)) )) = (__pyx_v_intensity_weighted_sum / __pyx_v_intensity_sum);
 
-            /* "ms_entropy/tools_cython.pyx":156
+            /* "ms_entropy/tools/fast_spectrum.pyx":90
  * 
  *                 spec_new[spec_new_i, 0] = intensity_weighted_sum / intensity_sum
  *                 spec_new[spec_new_i, 1] = intensity_sum             # <<<<<<<<<<<<<<
@@ -4329,9 +3470,9 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_t_13 = __pyx_v_spec_new_i;
             __pyx_t_14 = 1;
-            *((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spec_new.data + __pyx_t_13 * __pyx_v_spec_new.strides[0]) )) + __pyx_t_14)) )) = __pyx_v_intensity_sum;
+            *((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spec_new.data + __pyx_t_13 * __pyx_v_spec_new.strides[0]) )) + __pyx_t_14)) )) = __pyx_v_intensity_sum;
 
-            /* "ms_entropy/tools_cython.pyx":157
+            /* "ms_entropy/tools/fast_spectrum.pyx":91
  *                 spec_new[spec_new_i, 0] = intensity_weighted_sum / intensity_sum
  *                 spec_new[spec_new_i, 1] = intensity_sum
  *                 spec_new_i += 1             # <<<<<<<<<<<<<<
@@ -4340,7 +3481,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
  */
             __pyx_v_spec_new_i = (__pyx_v_spec_new_i + 1);
 
-            /* "ms_entropy/tools_cython.pyx":158
+            /* "ms_entropy/tools/fast_spectrum.pyx":92
  *                 spec_new[spec_new_i, 1] = intensity_sum
  *                 spec_new_i += 1
  *                 spec[i_left:i_right, 1] = 0             # <<<<<<<<<<<<<<
@@ -4365,7 +3506,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 158, __pyx_L4_error)
+    __PYX_ERR(0, 92, __pyx_L4_error)
 }
 
 {
@@ -4375,7 +3516,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
 }
 
 {
-                __pyx_t_10ms_entropy_12tools_cython_float32 __pyx_temp_scalar = 0.0;
+                __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 __pyx_temp_scalar = 0.0;
                 {
                     Py_ssize_t __pyx_temp_extent_0 = __pyx_t_4.shape[0];
                     Py_ssize_t __pyx_temp_stride_0 = __pyx_t_4.strides[0];
@@ -4383,7 +3524,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
                     Py_ssize_t __pyx_temp_idx_0;
                     __pyx_temp_pointer_0 = __pyx_t_4.data;
                     for (__pyx_temp_idx_0 = 0; __pyx_temp_idx_0 < __pyx_temp_extent_0; __pyx_temp_idx_0++) {
-                      *((__pyx_t_10ms_entropy_12tools_cython_float32 *) __pyx_temp_pointer_0) = __pyx_temp_scalar;
+                      *((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) __pyx_temp_pointer_0) = __pyx_temp_scalar;
                       __pyx_temp_pointer_0 += __pyx_temp_stride_0;
                     }
                 }
@@ -4392,7 +3533,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
             __pyx_t_4.memview = NULL;
             __pyx_t_4.data = NULL;
 
-            /* "ms_entropy/tools_cython.pyx":128
+            /* "ms_entropy/tools/fast_spectrum.pyx":62
  *                 mz_delta_allowed = ms2_ppm * 1e-6 * spec[idx, 0]
  * 
  *             if spec[idx, 1] > 0:             # <<<<<<<<<<<<<<
@@ -4403,7 +3544,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
         }
       }
 
-      /* "ms_entropy/tools_cython.pyx":120
+      /* "ms_entropy/tools/fast_spectrum.pyx":54
  *     cdef float32 mz_delta_left,mz_delta_right,intensity_sum,intensity_weighted_sum
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
@@ -4429,7 +3570,7 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
       }
   }
 
-  /* "ms_entropy/tools_cython.pyx":160
+  /* "ms_entropy/tools/fast_spectrum.pyx":94
  *                 spec[i_left:i_right, 1] = 0
  * 
  *     spec_result = spec_new[:spec_new_i,:]             # <<<<<<<<<<<<<<
@@ -4454,14 +3595,14 @@ __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_4, 1, (PyObject *(*)(char *)) __p
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 160, __pyx_L1_error)
+    __PYX_ERR(0, 94, __pyx_L1_error)
 }
 
 __pyx_t_8.shape[1] = __pyx_v_spec_new.shape[1];
 __pyx_t_8.strides[1] = __pyx_v_spec_new.strides[1];
     __pyx_t_8.suboffsets[1] = -1;
 
-__pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 160, __pyx_L1_error)
+__pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
@@ -4469,16 +3610,16 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   __pyx_v_spec_result = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "ms_entropy/tools_cython.pyx":161
+  /* "ms_entropy/tools/fast_spectrum.pyx":95
  * 
  *     spec_result = spec_new[:spec_new_i,:]
  *     spec_result=np.array(spec_result)[np.argsort(spec_result[:,0])]             # <<<<<<<<<<<<<<
  *     return spec_result
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4493,15 +3634,15 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   }
   __pyx_t_7 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_v_spec_result) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_spec_result);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argsort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argsort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_spec_result, __pyx_tuple__2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_spec_result, __pyx_tuple__2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -4516,17 +3657,17 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_spec_result, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "ms_entropy/tools_cython.pyx":162
+  /* "ms_entropy/tools/fast_spectrum.pyx":96
  *     spec_result = spec_new[:spec_new_i,:]
  *     spec_result=np.array(spec_result)[np.argsort(spec_result[:,0])]
  *     return spec_result             # <<<<<<<<<<<<<<
@@ -4538,7 +3679,7 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   __pyx_r = __pyx_v_spec_result;
   goto __pyx_L0;
 
-  /* "ms_entropy/tools_cython.pyx":100
+  /* "ms_entropy/tools/fast_spectrum.pyx":34
  *     return np.asarray(spectrum)
  * 
  * cdef centroid_spectrum_c(float32[:,::1] spec,double ms2_ppm, double ms2_da):             # <<<<<<<<<<<<<<
@@ -4556,7 +3697,7 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   __PYX_XDEC_MEMVIEW(&__pyx_t_6, 1);
   __Pyx_XDECREF(__pyx_t_7);
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
-  __Pyx_AddTraceback("ms_entropy.tools_cython.centroid_spectrum_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ms_entropy.tools.fast_spectrum.centroid_spectrum_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_intensity_order, 1);
@@ -4567,7 +3708,7 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
   return __pyx_r;
 }
 
-/* "ms_entropy/tools_cython.pyx":165
+/* "ms_entropy/tools/fast_spectrum.pyx":99
  * 
  * 
  * cdef int check_centroid_c(float32[:,::1] spectrum,double ms2_ppm, double ms2_da):             # <<<<<<<<<<<<<<
@@ -4575,7 +3716,7 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 2, (PyObject *(*)(char *)) __p
  *     Check whether the spectrum needs to be centroided or not.
  */
 
-static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewslice __pyx_v_spectrum, double __pyx_v_ms2_ppm, double __pyx_v_ms2_da) {
+static int __pyx_f_10ms_entropy_5tools_13fast_spectrum_check_centroid_c(__Pyx_memviewslice __pyx_v_spectrum, double __pyx_v_ms2_ppm, double __pyx_v_ms2_da) {
   int __pyx_v_i;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -4591,7 +3732,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
   Py_ssize_t __pyx_t_10;
   __Pyx_RefNannySetupContext("check_centroid_c", 0);
 
-  /* "ms_entropy/tools_cython.pyx":179
+  /* "ms_entropy/tools/fast_spectrum.pyx":113
  *     cdef int i
  * 
  *     if spectrum.shape[0]<=1:             # <<<<<<<<<<<<<<
@@ -4601,7 +3742,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
   __pyx_t_1 = (((__pyx_v_spectrum.shape[0]) <= 1) != 0);
   if (__pyx_t_1) {
 
-    /* "ms_entropy/tools_cython.pyx":180
+    /* "ms_entropy/tools/fast_spectrum.pyx":114
  * 
  *     if spectrum.shape[0]<=1:
  *         return 0             # <<<<<<<<<<<<<<
@@ -4611,7 +3752,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "ms_entropy/tools_cython.pyx":179
+    /* "ms_entropy/tools/fast_spectrum.pyx":113
  *     cdef int i
  * 
  *     if spectrum.shape[0]<=1:             # <<<<<<<<<<<<<<
@@ -4620,7 +3761,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
  */
   }
 
-  /* "ms_entropy/tools_cython.pyx":182
+  /* "ms_entropy/tools/fast_spectrum.pyx":116
  *         return 0
  * 
  *     if ms2_da>0:             # <<<<<<<<<<<<<<
@@ -4630,7 +3771,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
   __pyx_t_1 = ((__pyx_v_ms2_da > 0.0) != 0);
   if (__pyx_t_1) {
 
-    /* "ms_entropy/tools_cython.pyx":184
+    /* "ms_entropy/tools/fast_spectrum.pyx":118
  *     if ms2_da>0:
  *         # Use Da accuracy
  *         for i in range(1, spectrum.shape[0]):             # <<<<<<<<<<<<<<
@@ -4642,7 +3783,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
     for (__pyx_t_4 = 1; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_i = __pyx_t_4;
 
-      /* "ms_entropy/tools_cython.pyx":185
+      /* "ms_entropy/tools/fast_spectrum.pyx":119
  *         # Use Da accuracy
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < ms2_da:             # <<<<<<<<<<<<<<
@@ -4653,10 +3794,10 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
       __pyx_t_6 = 0;
       __pyx_t_7 = (__pyx_v_i - 1);
       __pyx_t_8 = 0;
-      __pyx_t_1 = ((((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_5 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_6)) ))) - (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_7 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_8)) )))) < __pyx_v_ms2_da) != 0);
+      __pyx_t_1 = ((((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_5 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_6)) ))) - (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_7 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_8)) )))) < __pyx_v_ms2_da) != 0);
       if (__pyx_t_1) {
 
-        /* "ms_entropy/tools_cython.pyx":186
+        /* "ms_entropy/tools/fast_spectrum.pyx":120
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < ms2_da:
  *                 return 1             # <<<<<<<<<<<<<<
@@ -4666,7 +3807,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
         __pyx_r = 1;
         goto __pyx_L0;
 
-        /* "ms_entropy/tools_cython.pyx":185
+        /* "ms_entropy/tools/fast_spectrum.pyx":119
  *         # Use Da accuracy
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < ms2_da:             # <<<<<<<<<<<<<<
@@ -4676,7 +3817,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
       }
     }
 
-    /* "ms_entropy/tools_cython.pyx":182
+    /* "ms_entropy/tools/fast_spectrum.pyx":116
  *         return 0
  * 
  *     if ms2_da>0:             # <<<<<<<<<<<<<<
@@ -4686,7 +3827,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
     goto __pyx_L4;
   }
 
-  /* "ms_entropy/tools_cython.pyx":189
+  /* "ms_entropy/tools/fast_spectrum.pyx":123
  *     else:
  *         # Use ppm accuracy
  *         for i in range(1, spectrum.shape[0]):             # <<<<<<<<<<<<<<
@@ -4699,7 +3840,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
     for (__pyx_t_4 = 1; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_i = __pyx_t_4;
 
-      /* "ms_entropy/tools_cython.pyx":190
+      /* "ms_entropy/tools/fast_spectrum.pyx":124
  *         # Use ppm accuracy
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < spectrum[i, 0]*ms2_ppm*1e-6:             # <<<<<<<<<<<<<<
@@ -4712,10 +3853,10 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
       __pyx_t_5 = 0;
       __pyx_t_9 = __pyx_v_i;
       __pyx_t_10 = 0;
-      __pyx_t_1 = ((((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_8 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_7)) ))) - (*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_6 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_5)) )))) < (((*((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_12tools_cython_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_9 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_10)) ))) * __pyx_v_ms2_ppm) * 1e-6)) != 0);
+      __pyx_t_1 = ((((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_8 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_7)) ))) - (*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_6 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_5)) )))) < (((*((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=1 */ ((char *) (((__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) ( /* dim=0 */ (__pyx_v_spectrum.data + __pyx_t_9 * __pyx_v_spectrum.strides[0]) )) + __pyx_t_10)) ))) * __pyx_v_ms2_ppm) * 1e-6)) != 0);
       if (__pyx_t_1) {
 
-        /* "ms_entropy/tools_cython.pyx":191
+        /* "ms_entropy/tools/fast_spectrum.pyx":125
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < spectrum[i, 0]*ms2_ppm*1e-6:
  *                 return 1             # <<<<<<<<<<<<<<
@@ -4724,7 +3865,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
         __pyx_r = 1;
         goto __pyx_L0;
 
-        /* "ms_entropy/tools_cython.pyx":190
+        /* "ms_entropy/tools/fast_spectrum.pyx":124
  *         # Use ppm accuracy
  *         for i in range(1, spectrum.shape[0]):
  *             if spectrum[i, 0]-spectrum[i-1, 0] < spectrum[i, 0]*ms2_ppm*1e-6:             # <<<<<<<<<<<<<<
@@ -4736,7 +3877,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
   }
   __pyx_L4:;
 
-  /* "ms_entropy/tools_cython.pyx":192
+  /* "ms_entropy/tools/fast_spectrum.pyx":126
  *             if spectrum[i, 0]-spectrum[i-1, 0] < spectrum[i, 0]*ms2_ppm*1e-6:
  *                 return 1
  *     return 0             # <<<<<<<<<<<<<<
@@ -4744,7 +3885,7 @@ static int __pyx_f_10ms_entropy_12tools_cython_check_centroid_c(__Pyx_memviewsli
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "ms_entropy/tools_cython.pyx":165
+  /* "ms_entropy/tools/fast_spectrum.pyx":99
  * 
  * 
  * cdef int check_centroid_c(float32[:,::1] spectrum,double ms2_ppm, double ms2_da):             # <<<<<<<<<<<<<<
@@ -18938,7 +18079,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "ms_entropy.tools_cython.array", /*tp_name*/
+  "ms_entropy.tools.fast_spectrum.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -19060,7 +18201,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "ms_entropy.tools_cython.Enum", /*tp_name*/
+  "ms_entropy.tools.fast_spectrum.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -19324,7 +18465,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "ms_entropy.tools_cython.memoryview", /*tp_name*/
+  "ms_entropy.tools.fast_spectrum.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -19465,7 +18606,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "ms_entropy.tools_cython._memoryviewslice", /*tp_name*/
+  "ms_entropy.tools.fast_spectrum._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -19544,27 +18685,24 @@ static PyTypeObject __pyx_type___pyx_memoryviewslice = {
 };
 
 static PyMethodDef __pyx_methods[] = {
-  {"entropy_similarity_search_fast", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10ms_entropy_12tools_cython_1entropy_similarity_search_fast, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10ms_entropy_12tools_cython_entropy_similarity_search_fast},
-  {"apply_weight_to_intensity", (PyCFunction)__pyx_pw_10ms_entropy_12tools_cython_3apply_weight_to_intensity, METH_O, __pyx_doc_10ms_entropy_12tools_cython_2apply_weight_to_intensity},
-  {"spectral_entropy", (PyCFunction)__pyx_pw_10ms_entropy_12tools_cython_5spectral_entropy, METH_O, __pyx_doc_10ms_entropy_12tools_cython_4spectral_entropy},
-  {"centroid_spectrum", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10ms_entropy_12tools_cython_7centroid_spectrum, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10ms_entropy_12tools_cython_6centroid_spectrum},
+  {"centroid_spectrum", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10ms_entropy_5tools_13fast_spectrum_1centroid_spectrum, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10ms_entropy_5tools_13fast_spectrum_centroid_spectrum},
   {0, 0, 0, 0}
 };
 
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_tools_cython(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_fast_spectrum(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_tools_cython},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_fast_spectrum},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "tools_cython",
+    "fast_spectrum",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -19629,7 +18767,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
-  {&__pyx_n_s_copy, __pyx_k_copy, sizeof(__pyx_k_copy), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dtype, __pyx_k_dtype, sizeof(__pyx_k_dtype), 0, 0, 1, 1},
   {&__pyx_n_s_dtype_is_object, __pyx_k_dtype_is_object, sizeof(__pyx_k_dtype_is_object), 0, 0, 1, 1},
@@ -19645,14 +18782,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
-  {&__pyx_n_s_intensity, __pyx_k_intensity, sizeof(__pyx_k_intensity), 0, 0, 1, 1},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
-  {&__pyx_n_s_library_peaks_intensity, __pyx_k_library_peaks_intensity, sizeof(__pyx_k_library_peaks_intensity), 0, 0, 1, 1},
-  {&__pyx_n_s_library_spec_idx_array, __pyx_k_library_spec_idx_array, sizeof(__pyx_k_library_spec_idx_array), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_memview, __pyx_k_memview, sizeof(__pyx_k_memview), 0, 0, 1, 1},
-  {&__pyx_n_s_mixed_spectra_entropy, __pyx_k_mixed_spectra_entropy, sizeof(__pyx_k_mixed_spectra_entropy), 0, 0, 1, 1},
   {&__pyx_n_s_mode, __pyx_k_mode, sizeof(__pyx_k_mode), 0, 0, 1, 1},
   {&__pyx_n_s_ms2_da, __pyx_k_ms2_da, sizeof(__pyx_k_ms2_da), 0, 0, 1, 1},
   {&__pyx_n_s_ms2_ppm, __pyx_k_ms2_ppm, sizeof(__pyx_k_ms2_ppm), 0, 0, 1, 1},
@@ -19669,8 +18802,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_order, __pyx_k_order, sizeof(__pyx_k_order), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
-  {&__pyx_n_s_product_mz_idx_max, __pyx_k_product_mz_idx_max, sizeof(__pyx_k_product_mz_idx_max), 0, 0, 1, 1},
-  {&__pyx_n_s_product_mz_idx_min, __pyx_k_product_mz_idx_min, sizeof(__pyx_k_product_mz_idx_min), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_getbuffer, __pyx_k_pyx_getbuffer, sizeof(__pyx_k_pyx_getbuffer), 0, 0, 1, 1},
@@ -19683,10 +18814,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
-  {&__pyx_n_s_search_array, __pyx_k_search_array, sizeof(__pyx_k_search_array), 0, 0, 1, 1},
-  {&__pyx_n_s_search_spectra_idx_max, __pyx_k_search_spectra_idx_max, sizeof(__pyx_k_search_spectra_idx_max), 0, 0, 1, 1},
-  {&__pyx_n_s_search_spectra_idx_min, __pyx_k_search_spectra_idx_min, sizeof(__pyx_k_search_spectra_idx_min), 0, 0, 1, 1},
-  {&__pyx_n_s_search_type, __pyx_k_search_type, sizeof(__pyx_k_search_type), 0, 0, 1, 1},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
@@ -19709,7 +18836,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 55, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 944, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(2, 134, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(2, 149, __pyx_L1_error)
@@ -19727,17 +18854,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "ms_entropy/tools_cython.pyx":161
+  /* "ms_entropy/tools/fast_spectrum.pyx":95
  * 
  *     spec_result = spec_new[:spec_new_i,:]
  *     spec_result=np.array(spec_result)[np.argsort(spec_result[:,0])]             # <<<<<<<<<<<<<<
  *     return spec_result
  * 
  */
-  __pyx_slice_ = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_slice_ = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_slice_, __pyx_int_0); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_slice_, __pyx_int_0); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
@@ -20230,11 +19357,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC inittools_cython(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC inittools_cython(void)
+__Pyx_PyMODINIT_FUNC initfast_spectrum(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initfast_spectrum(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_tools_cython(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_tools_cython(void)
+__Pyx_PyMODINIT_FUNC PyInit_fast_spectrum(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_fast_spectrum(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -20301,7 +19428,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_tools_cython(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_fast_spectrum(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -20314,7 +19441,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_tools_cython(PyObject *__pyx_pyini
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'tools_cython' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'fast_spectrum' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -20329,7 +19456,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_tools_cython(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_fast_spectrum(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -20366,7 +19493,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("tools_cython", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("fast_spectrum", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -20384,14 +19511,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_ms_entropy__tools_cython) {
+  if (__pyx_module_is_main_ms_entropy__tools__fast_spectrum) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name_2, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "ms_entropy.tools_cython")) {
-      if (unlikely(PyDict_SetItemString(modules, "ms_entropy.tools_cython", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "ms_entropy.tools.fast_spectrum")) {
+      if (unlikely(PyDict_SetItemString(modules, "ms_entropy.tools.fast_spectrum", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -20412,7 +19539,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "ms_entropy/tools_cython.pyx":1
+  /* "ms_entropy/tools/fast_spectrum.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * 
@@ -20422,7 +19549,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "ms_entropy/tools_cython.pyx":165
+  /* "ms_entropy/tools/fast_spectrum.pyx":99
  * 
  * 
  * cdef int check_centroid_c(float32[:,::1] spectrum,double ms2_ppm, double ms2_da):             # <<<<<<<<<<<<<<
@@ -20594,11 +19721,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init ms_entropy.tools_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init ms_entropy.tools.fast_spectrum", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init ms_entropy.tools_cython");
+    PyErr_SetString(PyExc_ImportError, "init ms_entropy.tools.fast_spectrum");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -20655,153 +19782,6 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
 #endif
     }
     return result;
-}
-
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
-    }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
-}
-
-/* RaiseDoubleKeywords */
-static void __Pyx_RaiseDoubleKeywordsError(
-    const char* func_name,
-    PyObject* kw_name)
-{
-    PyErr_Format(PyExc_TypeError,
-        #if PY_MAJOR_VERSION >= 3
-        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
-        #else
-        "%s() got multiple values for keyword argument '%s'", func_name,
-        PyString_AsString(kw_name));
-        #endif
-}
-
-/* ParseKeywords */
-static int __Pyx_ParseOptionalKeywords(
-    PyObject *kwds,
-    PyObject **argnames[],
-    PyObject *kwds2,
-    PyObject *values[],
-    Py_ssize_t num_pos_args,
-    const char* function_name)
-{
-    PyObject *key = 0, *value = 0;
-    Py_ssize_t pos = 0;
-    PyObject*** name;
-    PyObject*** first_kw_arg = argnames + num_pos_args;
-    while (PyDict_Next(kwds, &pos, &key, &value)) {
-        name = first_kw_arg;
-        while (*name && (**name != key)) name++;
-        if (*name) {
-            values[name-argnames] = value;
-            continue;
-        }
-        name = first_kw_arg;
-        #if PY_MAJOR_VERSION < 3
-        if (likely(PyString_Check(key))) {
-            while (*name) {
-                if ((CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**name) == PyString_GET_SIZE(key))
-                        && _PyString_Eq(**name, key)) {
-                    values[name-argnames] = value;
-                    break;
-                }
-                name++;
-            }
-            if (*name) continue;
-            else {
-                PyObject*** argname = argnames;
-                while (argname != first_kw_arg) {
-                    if ((**argname == key) || (
-                            (CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**argname) == PyString_GET_SIZE(key))
-                             && _PyString_Eq(**argname, key))) {
-                        goto arg_passed_twice;
-                    }
-                    argname++;
-                }
-            }
-        } else
-        #endif
-        if (likely(PyUnicode_Check(key))) {
-            while (*name) {
-                int cmp = (**name == key) ? 0 :
-                #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
-                    (__Pyx_PyUnicode_GET_LENGTH(**name) != __Pyx_PyUnicode_GET_LENGTH(key)) ? 1 :
-                #endif
-                    PyUnicode_Compare(**name, key);
-                if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
-                if (cmp == 0) {
-                    values[name-argnames] = value;
-                    break;
-                }
-                name++;
-            }
-            if (*name) continue;
-            else {
-                PyObject*** argname = argnames;
-                while (argname != first_kw_arg) {
-                    int cmp = (**argname == key) ? 0 :
-                    #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
-                        (__Pyx_PyUnicode_GET_LENGTH(**argname) != __Pyx_PyUnicode_GET_LENGTH(key)) ? 1 :
-                    #endif
-                        PyUnicode_Compare(**argname, key);
-                    if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
-                    if (cmp == 0) goto arg_passed_twice;
-                    argname++;
-                }
-            }
-        } else
-            goto invalid_keyword_type;
-        if (kwds2) {
-            if (unlikely(PyDict_SetItem(kwds2, key, value))) goto bad;
-        } else {
-            goto invalid_keyword;
-        }
-    }
-    return 0;
-arg_passed_twice:
-    __Pyx_RaiseDoubleKeywordsError(function_name, key);
-    goto bad;
-invalid_keyword_type:
-    PyErr_Format(PyExc_TypeError,
-        "%.200s() keywords must be strings", function_name);
-    goto bad;
-invalid_keyword:
-    PyErr_Format(PyExc_TypeError,
-    #if PY_MAJOR_VERSION < 3
-        "%.200s() got an unexpected keyword argument '%.200s'",
-        function_name, PyString_AsString(key));
-    #else
-        "%s() got an unexpected keyword argument '%U'",
-        function_name, key);
-    #endif
-bad:
-    return -1;
-}
-
-/* None */
-static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
-    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
 }
 
 /* MemviewSliceInit */
@@ -21247,6 +20227,153 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
     return result;
 }
 #endif
+
+/* RaiseDoubleKeywords */
+static void __Pyx_RaiseDoubleKeywordsError(
+    const char* func_name,
+    PyObject* kw_name)
+{
+    PyErr_Format(PyExc_TypeError,
+        #if PY_MAJOR_VERSION >= 3
+        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
+        #else
+        "%s() got multiple values for keyword argument '%s'", func_name,
+        PyString_AsString(kw_name));
+        #endif
+}
+
+/* ParseKeywords */
+static int __Pyx_ParseOptionalKeywords(
+    PyObject *kwds,
+    PyObject **argnames[],
+    PyObject *kwds2,
+    PyObject *values[],
+    Py_ssize_t num_pos_args,
+    const char* function_name)
+{
+    PyObject *key = 0, *value = 0;
+    Py_ssize_t pos = 0;
+    PyObject*** name;
+    PyObject*** first_kw_arg = argnames + num_pos_args;
+    while (PyDict_Next(kwds, &pos, &key, &value)) {
+        name = first_kw_arg;
+        while (*name && (**name != key)) name++;
+        if (*name) {
+            values[name-argnames] = value;
+            continue;
+        }
+        name = first_kw_arg;
+        #if PY_MAJOR_VERSION < 3
+        if (likely(PyString_Check(key))) {
+            while (*name) {
+                if ((CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**name) == PyString_GET_SIZE(key))
+                        && _PyString_Eq(**name, key)) {
+                    values[name-argnames] = value;
+                    break;
+                }
+                name++;
+            }
+            if (*name) continue;
+            else {
+                PyObject*** argname = argnames;
+                while (argname != first_kw_arg) {
+                    if ((**argname == key) || (
+                            (CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**argname) == PyString_GET_SIZE(key))
+                             && _PyString_Eq(**argname, key))) {
+                        goto arg_passed_twice;
+                    }
+                    argname++;
+                }
+            }
+        } else
+        #endif
+        if (likely(PyUnicode_Check(key))) {
+            while (*name) {
+                int cmp = (**name == key) ? 0 :
+                #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
+                    (__Pyx_PyUnicode_GET_LENGTH(**name) != __Pyx_PyUnicode_GET_LENGTH(key)) ? 1 :
+                #endif
+                    PyUnicode_Compare(**name, key);
+                if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
+                if (cmp == 0) {
+                    values[name-argnames] = value;
+                    break;
+                }
+                name++;
+            }
+            if (*name) continue;
+            else {
+                PyObject*** argname = argnames;
+                while (argname != first_kw_arg) {
+                    int cmp = (**argname == key) ? 0 :
+                    #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
+                        (__Pyx_PyUnicode_GET_LENGTH(**argname) != __Pyx_PyUnicode_GET_LENGTH(key)) ? 1 :
+                    #endif
+                        PyUnicode_Compare(**argname, key);
+                    if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
+                    if (cmp == 0) goto arg_passed_twice;
+                    argname++;
+                }
+            }
+        } else
+            goto invalid_keyword_type;
+        if (kwds2) {
+            if (unlikely(PyDict_SetItem(kwds2, key, value))) goto bad;
+        } else {
+            goto invalid_keyword;
+        }
+    }
+    return 0;
+arg_passed_twice:
+    __Pyx_RaiseDoubleKeywordsError(function_name, key);
+    goto bad;
+invalid_keyword_type:
+    PyErr_Format(PyExc_TypeError,
+        "%.200s() keywords must be strings", function_name);
+    goto bad;
+invalid_keyword:
+    PyErr_Format(PyExc_TypeError,
+    #if PY_MAJOR_VERSION < 3
+        "%.200s() got an unexpected keyword argument '%.200s'",
+        function_name, PyString_AsString(key));
+    #else
+        "%s() got an unexpected keyword argument '%U'",
+        function_name, key);
+    #endif
+bad:
+    return -1;
+}
+
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
+    const char* func_name,
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
+{
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
+    }
+    if (exact) {
+        more_or_less = "exactly";
+    }
+    PyErr_Format(PyExc_TypeError,
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
+}
+
+/* None */
+static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
+    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
+}
 
 /* GetItemInt */
 static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
@@ -22897,28 +22024,6 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
     return cobj;
 }
 
-/* CIntFromPyVerify */
-#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
-
 /* IsLittleEndian */
 static CYTHON_INLINE int __Pyx_Is_Little_Endian(void)
 {
@@ -23655,99 +22760,7 @@ no_fail:
 }
 
 /* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
-                                                 PyBUF_RECORDS_RO | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_float32, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_float32__const__(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
-                                                 PyBUF_RECORDS_RO | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_float32__const__, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_uint_32__const__(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
-                                                 PyBUF_RECORDS_RO | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_uint_32__const__, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_8__const__(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
-                                                 PyBUF_RECORDS_RO | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_int_8__const__, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_12tools_cython_float32(PyObject *obj, int writable_flag) {
+  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(PyObject *obj, int writable_flag) {
     __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
     __Pyx_BufFmt_StackElem stack[1];
     int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_FOLLOW), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_CONTIG) };
@@ -23758,7 +22771,7 @@ __pyx_fail:
     }
     retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, __Pyx_IS_C_CONTIG,
                                                  (PyBUF_C_CONTIGUOUS | PyBUF_FORMAT) | writable_flag, 2,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_float32, stack,
+                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32, stack,
                                                  &result, obj);
     if (unlikely(retcode == -1))
         goto __pyx_fail;
@@ -23770,19 +22783,19 @@ __pyx_fail:
 }
 
 /* MemviewDtypeToObject */
-  static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_10ms_entropy_12tools_cython_float32(const char *itemp) {
-    return (PyObject *) PyFloat_FromDouble(*(__pyx_t_10ms_entropy_12tools_cython_float32 *) itemp);
+  static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(const char *itemp) {
+    return (PyObject *) PyFloat_FromDouble(*(__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) itemp);
 }
-static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cython_float32(const char *itemp, PyObject *obj) {
-    __pyx_t_10ms_entropy_12tools_cython_float32 value = __pyx_PyFloat_AsFloat(obj);
+static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_float32(const char *itemp, PyObject *obj) {
+    __pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 value = __pyx_PyFloat_AsFloat(obj);
     if ((value == ((npy_float32)-1)) && PyErr_Occurred())
         return 0;
-    *(__pyx_t_10ms_entropy_12tools_cython_float32 *) itemp = value;
+    *(__pyx_t_10ms_entropy_5tools_13fast_spectrum_float32 *) itemp = value;
     return 1;
 }
 
 /* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_12tools_cython_int_64(PyObject *obj, int writable_flag) {
+  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64(PyObject *obj, int writable_flag) {
     __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
     __Pyx_BufFmt_StackElem stack[1];
     int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
@@ -23793,7 +22806,7 @@ static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_10ms_entropy_12tools_cytho
     }
     retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
                                                  PyBUF_RECORDS_RO | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_12tools_cython_int_64, stack,
+                                                 &__Pyx_TypeInfo_nn___pyx_t_10ms_entropy_5tools_13fast_spectrum_int_64, stack,
                                                  &result, obj);
     if (unlikely(retcode == -1))
         goto __pyx_fail;
@@ -23803,6 +22816,28 @@ __pyx_fail:
     result.data = NULL;
     return result;
 }
+
+/* CIntFromPyVerify */
+  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
 
 /* Declarations */
   #if CYTHON_CCOMPLEX
@@ -24179,200 +23214,42 @@ no_fail:
     return new_mvs;
 }
 
-/* CIntFromPy */
-  static CYTHON_INLINE npy_int64 __Pyx_PyInt_As_npy_int64(PyObject *x) {
+/* CIntToPy */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wconversion"
 #endif
-    const npy_int64 neg_one = (npy_int64) -1, const_zero = (npy_int64) 0;
+    const int neg_one = (int) -1, const_zero = (int) 0;
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
 #pragma GCC diagnostic pop
 #endif
     const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(npy_int64) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(npy_int64, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (npy_int64) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (npy_int64) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(npy_int64, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(npy_int64) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) >= 2 * PyLong_SHIFT) {
-                            return (npy_int64) (((((npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(npy_int64) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) >= 3 * PyLong_SHIFT) {
-                            return (npy_int64) (((((((npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(npy_int64) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) >= 4 * PyLong_SHIFT) {
-                            return (npy_int64) (((((((((npy_int64)digits[3]) << PyLong_SHIFT) | (npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (npy_int64) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(npy_int64) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(npy_int64, unsigned long, PyLong_AsUnsignedLong(x))
+    if (is_unsigned) {
+        if (sizeof(int) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
 #ifdef HAVE_LONG_LONG
-            } else if (sizeof(npy_int64) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(npy_int64, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
 #endif
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (npy_int64) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(npy_int64, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(npy_int64,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(npy_int64) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 2 * PyLong_SHIFT) {
-                            return (npy_int64) (((npy_int64)-1)*(((((npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(npy_int64) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 2 * PyLong_SHIFT) {
-                            return (npy_int64) ((((((npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(npy_int64) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 3 * PyLong_SHIFT) {
-                            return (npy_int64) (((npy_int64)-1)*(((((((npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(npy_int64) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 3 * PyLong_SHIFT) {
-                            return (npy_int64) ((((((((npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(npy_int64) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 4 * PyLong_SHIFT) {
-                            return (npy_int64) (((npy_int64)-1)*(((((((((npy_int64)digits[3]) << PyLong_SHIFT) | (npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(npy_int64) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(npy_int64, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(npy_int64) - 1 > 4 * PyLong_SHIFT) {
-                            return (npy_int64) ((((((((((npy_int64)digits[3]) << PyLong_SHIFT) | (npy_int64)digits[2]) << PyLong_SHIFT) | (npy_int64)digits[1]) << PyLong_SHIFT) | (npy_int64)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(npy_int64) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(npy_int64, long, PyLong_AsLong(x))
-#ifdef HAVE_LONG_LONG
-            } else if (sizeof(npy_int64) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(npy_int64, PY_LONG_LONG, PyLong_AsLongLong(x))
-#endif
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            npy_int64 val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (npy_int64) -1;
         }
     } else {
-        npy_int64 val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (npy_int64) -1;
-        val = __Pyx_PyInt_As_npy_int64(tmp);
-        Py_DECREF(tmp);
-        return val;
+        if (sizeof(int) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
     }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to npy_int64");
-    return (npy_int64) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to npy_int64");
-    return (npy_int64) -1;
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
 }
 
 /* CIntFromPy */
@@ -24569,120 +23446,6 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to int");
     return (int) -1;
-}
-
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_int64(npy_int64 value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const npy_int64 neg_one = (npy_int64) -1, const_zero = (npy_int64) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(npy_int64) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(npy_int64) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(npy_int64) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(npy_int64) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(npy_int64) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(npy_int64),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_int8(npy_int8 value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const npy_int8 neg_one = (npy_int8) -1, const_zero = (npy_int8) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(npy_int8) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(npy_int8) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(npy_int8) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(npy_int8) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(npy_int8) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(npy_int8),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const int neg_one = (int) -1, const_zero = (int) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
 }
 
 /* CIntFromPy */

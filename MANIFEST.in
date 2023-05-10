@@ -1,2 +1,2 @@
-global-include *.pyx
-global-exclude manuscript/*
+recursive-include ms_entropy *.py
+recursive-include ms_entropy *.pyx

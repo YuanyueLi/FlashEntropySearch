@@ -3,8 +3,9 @@ import numpy as np
 import copy
 import pickle
 from pathlib import Path
-from .flash_entropy_search_core import FlashEntropySearchCore, FlashEntropySearchCoreLowMemory
-from .tools import clean_spectrum
+from .flash_entropy_search_core import FlashEntropySearchCore
+from .flash_entropy_search_core_low_memory import FlashEntropySearchCoreLowMemory
+from ..tools import clean_spectrum
 
 
 class FlashEntropySearch:

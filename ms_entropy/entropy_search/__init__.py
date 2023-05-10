@@ -1,0 +1,1 @@
+from .flash_entropy_search import FlashEntropySearch
