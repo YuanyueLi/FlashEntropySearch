@@ -14,6 +14,7 @@ To use this package, you will need to have the following software and dependenci
 
   - On Linux, you may need to install the ``gcc`` and ``python-dev`` (for apt) or ``python-devel`` (for yum) packages first.
   - On Windows, you will need to install the `Microsoft Visual C++ 14.0 or greater Build Tools <https://visualstudio.microsoft.com/visual-cpp-build-tools/>`_ first.
+  - On macOS, you will need to install the ``Xcode Command Line Tools`` first.
 
 - ``Numpy >= 1.18``  (will be installed automatically when you install the package from PyPI)
 

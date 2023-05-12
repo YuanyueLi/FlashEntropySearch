@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
 import tempfile
-from ms_entropy.flash_entropy_search import FlashEntropySearch
+from ms_entropy import FlashEntropySearch
 
 
 class TestFlashEntropySearchWithCpu(unittest.TestCase):

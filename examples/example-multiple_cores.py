@@ -1,5 +1,4 @@
 import numpy as np
-import pprint
 from ms_entropy import FlashEntropySearch
 import multiprocessing as mp
 

@@ -8,13 +8,47 @@ import numpy as np
 from . import lbm2_file, mgf_file, msp_file, mzml_file
 
 
+def standardize_spectrum(spectrum_dict: dict, standardize_info: dict, keep_all_keys=True):
+    """
+    Standardize spectrum informat to a standard format provided by standardize_info.
+
+    :param spectrum_dict: spectrum info to standardize, this dict will be modified if keep_all_keys is True.
+    :param standardize_info: {wanted_key:[[candidate_keys],default_value,default_type_function]}
+    :param keep_all_keys: whether to keep all keys in spectrum_dict. If False, only output wanted keys, else output all keys.
+
+    :return: standardized spectrum info
+    """
+    if keep_all_keys:
+        spec_result = spectrum_dict
+    else:
+        spec_result = {}
+    for key_target, (key_all_candidates, value_default, cast_type) in standardize_info.items():
+        key_all_candidates_new = [key_target] + key_all_candidates
+        for key_candidate in key_all_candidates_new:
+            if key_candidate in spectrum_dict:
+                try:
+                    if cast_type is None:
+                        spec_result[key_target] = spectrum_dict.pop(key_candidate)
+                    else:
+                        spec_result[key_target] = cast_type(spectrum_dict.pop(key_candidate))
+                    break
+                except:
+                    continue
+        else:
+            spec_result[key_target] = value_default
+
+        for key_candidate in key_all_candidates:
+            spectrum_dict.pop(key_candidate, None)
+    return spec_result
+
+
 def read_one_spectrum(file_input: Union[str, Path],
                       file_type: object = None,
                       **kwargs) -> dict:
     """
     A generator to read one spectrum from file.
 
-    Currently support .mgf, .msp, .mzML and .lbm2 file.
+    Currently support **.mgf**, **.msp**, **.mzML** and **.lbm2** file.
 
     The .mgf, .msp can be compressed with .gz, .bz2 or .zip extension.
 
@@ -55,7 +89,7 @@ def read_one_spectrum(file_input: Union[str, Path],
 
 def guess_file_type_from_file_name(filename_input):
     file_type = None
-    filename_input=str(filename_input)
+    filename_input = str(filename_input)
 
     # For zip file, only select the first file for the zip file
     if filename_input[-4:].lower() == ".zip":
@@ -102,5 +136,5 @@ def guess_file_type_from_file_name(filename_input):
             file_type = "mgf"
         elif filename_input.split(".")[-2].lower() == "mzml":
             file_type = "mzml"
-        
+
     return file_type

@@ -1,1 +1,1 @@
-from .spec_file import read_one_spectrum
+from .spec_file import read_one_spectrum, standardize_spectrum

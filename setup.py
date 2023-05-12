@@ -9,7 +9,7 @@ os.environ['CFLAGS'] = '-O3 -Wno-cpp -Wno-unused-function'
 
 setup(
     name='ms_entropy',
-    version='0.5.2',
+    version='0.5.3',
     license='Apache License 2.0',
     author='Yuanyue Li',
     url='https://github.com/YuanyueLi/SpectralEntropy',
@@ -17,11 +17,13 @@ setup(
     python_requires='>=3.8',
     install_requires=[
         "numpy >= 1.18",
-        "cython >= 0.29"
+        "cython >= 0.29",
+        "lz4>=4.3.2",
+        "msgpack>=1.0.5",
+        "pymzml>=2.5.2"
     ],
     extras_require={
-        "gpu": ["cupy >= 8.3.0"],
-        "all": ["cupy >= 8.3.0", "lz4>=4.3.2", "msgpack>=1.0.5", "pymzml>=2.5.2"]
+        "gpu": ["cupy >= 8.3.0"]
     },
     keywords=[
         "ms entropy",
