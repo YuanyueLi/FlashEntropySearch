@@ -21,6 +21,12 @@ def read_one_spectrum(file_input, **kwargs) -> dict:
             'precursor_mz': raw_spectrum_info.selected_precursors[0].get('mz', None) if len(raw_spectrum_info.selected_precursors) > 0 else None,
             'precursor_charge': raw_spectrum_info.selected_precursors[0].get('charge', None) if len(raw_spectrum_info.selected_precursors) > 0 else None,
         }
+        try:
+            spectrum_title = raw_spectrum_info.get_element_by_name("spectrum title")
+            spectrum_info["name"] = spectrum_title.attrib["value"]
+        except:
+            spectrum_info["name"] = ""
+            
         if spectrum_info["precursor_charge"] is None:
             if raw_spectrum_info["negative scan"]:
                 spectrum_info["precursor_charge"] = -1

@@ -236,9 +236,7 @@ class FlashEntropySearch:
                                                                max_peak_num=max_peak_num)
             if len(spec["peaks"]) > 0:
                 all_spectra_list.append(spec)
-                metadata = copy.copy(spec)
-                metadata.pop("peaks")
-                all_metadata_list.append(pickle.dumps(metadata))
+                all_metadata_list.append(pickle.dumps(spec))
 
         # Extract precursor m/z array
         self.precursor_mz_array = np.array([spec["precursor_mz"] for spec in all_spectra_list], dtype=np.float32)

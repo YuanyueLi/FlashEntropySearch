@@ -37,8 +37,8 @@ def standardize_spectrum(spectrum_dict: dict, standardize_info: dict, keep_all_k
         else:
             spec_result[key_target] = value_default
 
-        for key_candidate in key_all_candidates:
-            spectrum_dict.pop(key_candidate, None)
+        # for key_candidate in key_all_candidates:
+        #     spectrum_dict.pop(key_candidate, None)
     return spec_result
 
 
