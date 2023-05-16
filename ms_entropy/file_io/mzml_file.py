@@ -11,7 +11,7 @@ def read_one_spectrum(file_input, **kwargs) -> dict:
     :return: a dict contains one spectrum information.    
     """
     import pymzml
-    run = pymzml.run.Reader(file_input)
+    run = pymzml.run.Reader(file_input, obo_version="4.1.33")
     for _scan_number, raw_spectrum_info in enumerate(run):
         spectrum_info = {
             "_ms_level": raw_spectrum_info.ms_level,
