@@ -59,6 +59,8 @@ class FlashEntropySearchCore:
         """
         if not self.index:
             return np.zeros(0, dtype=np.float32)
+        if len(peaks) == 0:
+            return np.zeros(self.total_spectra_num, dtype=np.float32)
 
         # Check peaks
         assert ms2_tolerance_in_da <= self.max_ms2_tolerance_in_da, "The MS2 tolerance is larger than the maximum MS2 tolerance."
@@ -142,6 +144,8 @@ class FlashEntropySearchCore:
         """
         if not self.index:
             return np.zeros(0, dtype=np.float32)
+        if len(peaks) == 0:
+            return np.zeros(self.total_spectra_num, dtype=np.float32)
 
         # Check peaks
         assert ms2_tolerance_in_da <= self.max_ms2_tolerance_in_da, "The MS2 tolerance is larger than the maximum MS2 tolerance."

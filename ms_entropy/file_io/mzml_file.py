@@ -8,7 +8,53 @@ def read_one_spectrum(file_input, **kwargs) -> dict:
 
     :param filename_input: The file path of input file, can be str or Path.
     :param obo_version: The version of obo file, default is "4.1.33".
-    :return: a dict contains one spectrum information.    
+    :return: a dict contains one spectrum information.
+    """
+    import pyteomics.mzml
+    with pyteomics.mzml.read(str(file_input)) as reader:
+        for scan, spec in enumerate(reader):
+            mz = spec['m/z array']
+            intensity = spec['intensity array']
+            peaks = np.asarray([mz, intensity], dtype=np.float32).T
+            try:
+                rt = spec['scanList']['scan'][0]['scan start time']
+            except:
+                rt = -1
+
+            try:
+                precursor_mz = spec['precursorList']['precursor'][0]['selectedIonList']['selectedIon'][0]['selected ion m/z']
+            except:
+                precursor_mz = -1
+
+            try:
+                charge = spec['precursorList']['precursor'][0]['selectedIonList']['selectedIon'][0]['charge state']
+            except:
+                charge = 1
+
+            if 'negative scan' in spec:
+                charge = -1 * np.abs(charge)
+            elif 'positive scan' in spec:
+                charge = np.abs(charge)
+
+            spectrum_info = {
+                "_ms_level": spec.get("ms level", 0),
+                "_scan_number": scan + 1,
+                "peaks": np.asarray(peaks, dtype=np.float32, order="C"),
+                "rt": rt,
+                "charge": charge,
+                "precursor_mz": precursor_mz,
+                "name": spec.get("spectrum title", ""),
+            }
+            yield spectrum_info
+
+
+def read_one_spectrum_with_pymzml(file_input, **kwargs) -> dict:
+    """
+    A generator to read one spectrum from .mzml file.
+
+    :param filename_input: The file path of input file, can be str or Path.
+    :param obo_version: The version of obo file, default is "4.1.33".
+    :return: a dict contains one spectrum information.
     """
     import pymzml
     run = pymzml.run.Reader(file_input, obo_version="4.1.33")
@@ -26,7 +72,7 @@ def read_one_spectrum(file_input, **kwargs) -> dict:
             spectrum_info["name"] = spectrum_title.attrib["value"]
         except:
             spectrum_info["name"] = ""
-            
+
         if spectrum_info["precursor_charge"] is None:
             if raw_spectrum_info["negative scan"]:
                 spectrum_info["precursor_charge"] = -1
