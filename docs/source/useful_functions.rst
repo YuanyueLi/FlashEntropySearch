@@ -15,7 +15,7 @@ This function takes three parameters:
 
 - ``min_similarity``: The minimum similarity score you want to get. Set to None to get all results.
 
-The function returns a list of dictionaries, where each dictionary represents a spectrum in the library. The dictionary is the same as the one in the library spectra (the input of ``set_library_spectra``), except that the ``peaks`` key is removed and the ``entropy_similarity`` key is added to store the similarity score of the spectrum.
+The function returns a list of dictionaries, where each dictionary represents a spectrum in the library. The dictionary is the same as the one in the library spectra (the input of ``set_library_spectra``), and the ``entropy_similarity`` key is added to store the similarity score of the spectrum.
 
 .. code-block:: python
 
