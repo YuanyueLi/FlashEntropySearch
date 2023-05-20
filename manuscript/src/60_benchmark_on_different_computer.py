@@ -3,6 +3,7 @@ import datetime
 import os
 import platform
 import re
+import ssl
 import subprocess
 import time
 import urllib.request
@@ -11,6 +12,9 @@ from pathlib import Path
 import numpy as np
 from ms_entropy import FlashEntropySearch, clean_spectrum
 from ms_entropy.file_io.msp_file import read_one_spectrum
+
+# Ignore SSL certificate verification 
+ssl._create_default_https_context = ssl._create_unverified_context
 
 URL_MONA = r'https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/03d5a22c-c1e1-4101-ac70-9a4eae437ef5'
 MS1_TOLERANCE_IN_DA = 0.01
