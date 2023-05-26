@@ -9,7 +9,7 @@ We are continuously improving the code, and the latest version of the code can b
 You can find a brief introduction below, or you can find a more detailed documentation here: [https://flashentropysearch.readthedocs.io](https://flashentropysearch.readthedocs.io/).
 
 ## GUI
-You can find the Graphical user interface (GUI) here: [Entropy Search](https://github.com/YuanyueLi/EntropySearch)
+You can find the Graphical user interface (GUI) here: [Entropy Search](https://github.com/YuanyueLi/EntropySearch/releases)
 
 ## In brief
 
