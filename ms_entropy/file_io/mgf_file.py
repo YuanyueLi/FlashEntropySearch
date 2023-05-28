@@ -46,6 +46,7 @@ def read_one_spectrum(file_input, file_encoding='utf-8', **kwargs) -> dict:
                 spectrum_info[key] = value
             else:
                 items = line.split()
-                spectrum_info['peaks'].append([items[0], items[1]])
+                if len(items)>=2:
+                    spectrum_info['peaks'].append([items[0], items[1]])
 
     fi.close()
