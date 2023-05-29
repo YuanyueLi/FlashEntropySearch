@@ -10,6 +10,8 @@ You can find a brief introduction below, or you can find a more detailed documen
 
 ## GUI
 You can find the Graphical user interface (GUI) here: [Entropy Search](https://github.com/YuanyueLi/EntropySearch/releases)
+![Screenshot for GUI 1](./docs/images/GUI_start.png)
+![Screenshot for GUI 2](./docs/images/GUI_result.png)
 
 ## In brief
 
