@@ -2,6 +2,22 @@
 Useful functions
 ================
 
+Read spectra from file
+======================
+We provide a function to read spectra from file for easy use. The function is ``read_one_spectrum`` in the ``ms_entropy`` module. For example:
+
+.. code-block:: python
+
+    from ms_entropy import read_one_spectrum
+    for spectrum in read_one_spectrum('path/to/spectrum/file'):
+        print(spectrum)
+
+This function will return a dictionary, where the key-value pairs are the metadata of the spectrum.
+
+Currently, we support the following file formats: ``.mgf``, ``.msp``, ``.mzML``, and ``.lbm2`` from the MS-DIAL software.
+
+
+
 Get the top-n results
 =====================
 
