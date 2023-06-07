@@ -321,13 +321,14 @@ class FlashEntropySearchCore:
             peaks = self._preprocess_peaks(peaks)
 
             # Assign the product ion m/z
-            peak_data.view(np.float32).reshape(total_peaks_num, -1)[peak_idx:(peak_idx + peaks.shape[0]), 0] = peaks[:, 0]
+            peak_data_item = peak_data[peak_idx:(peak_idx + peaks.shape[0])]
+            peak_data_item["ion_mz"] = peaks[:, 0]
             # Assign the neutral loss mass
-            peak_data.view(np.float32).reshape(total_peaks_num, -1)[peak_idx:(peak_idx + peaks.shape[0]), 1] = precursor_mz - peaks[:, 0]
+            peak_data_item["nl_mass"] = precursor_mz - peaks[:, 0]
             # Assign the intensity
-            peak_data.view(np.float32).reshape(total_peaks_num, -1)[peak_idx:(peak_idx + peaks.shape[0]), 2] = peaks[:, 1]
+            peak_data_item["intensity"] = peaks[:, 1]
             # Assign the spectrum index
-            peak_data.view(np.uint32).reshape(total_peaks_num, -1)[peak_idx:(peak_idx + peaks.shape[0]), 3] = idx
+            peak_data_item["spec_idx"] = idx
             # Set the peak index
             peak_idx += peaks.shape[0]
 
@@ -342,12 +343,12 @@ class FlashEntropySearchCore:
         peak_data.sort(order="ion_mz")
 
         # Record the m/z, intensity, and spectrum index information for product ions.
-        all_ions_mz = np.copy(peak_data.view(np.float32).reshape(total_peaks_num, -1)[:, 0])
-        all_ions_intensity = np.copy(peak_data.view(np.float32).reshape(total_peaks_num, -1)[:, 2])
-        all_ions_spec_idx = np.copy(peak_data.view(np.uint32).reshape(total_peaks_num, -1)[:, 3])
+        all_ions_mz = np.copy(peak_data["ion_mz"])
+        all_ions_intensity = np.copy(peak_data["intensity"])
+        all_ions_spec_idx = np.copy(peak_data["spec_idx"])
 
         # Assign the index of the product ions.
-        peak_data.view(np.uint64).reshape(total_peaks_num, -1)[:, 2] = np.arange(0, self.total_peaks_num, dtype=np.uint64)
+        peak_data["peak_idx"] = np.arange(0, self.total_peaks_num, dtype=np.uint64)
 
         # Build index for fast access to the ion's m/z.
         max_mz = min(np.max(all_ions_mz), max_indexed_mz)
@@ -359,10 +360,10 @@ class FlashEntropySearchCore:
         peak_data.sort(order="nl_mass")
 
         # Record the m/z, intensity, spectrum index, and product ions index information for neutral loss ions.
-        all_nl_mass = np.copy(peak_data.view(np.float32).reshape(total_peaks_num, -1)[:, 1])
-        all_nl_intensity = np.copy(peak_data.view(np.float32).reshape(total_peaks_num, -1)[:, 2])
-        all_nl_spec_idx = np.copy(peak_data.view(np.uint32).reshape(total_peaks_num, -1)[:, 3])
-        all_ions_idx_for_nl = np.copy(peak_data.view(np.uint64).reshape(total_peaks_num, -1)[:, 2])
+        all_nl_mass = peak_data["nl_mass"]
+        all_nl_intensity = peak_data["intensity"]
+        all_nl_spec_idx = peak_data["spec_idx"]
+        all_ions_idx_for_nl = peak_data["peak_idx"]
 
         # Build the index for fast access to the neutral loss mass.
         max_mz = min(np.max(all_nl_mass), max_indexed_mz)
