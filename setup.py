@@ -24,7 +24,7 @@ setup(
         "pyteomics == 4.6"
     ],
     extras_require={
-        "gpu": ["cupy >= 8.3.0"]
+        "gpu": ["cupy >= 12.0.0"]
     },
     keywords=[
         "ms entropy",
