@@ -4,9 +4,12 @@ This repository contains the source code for Flash Entropy Search, a method usin
 
 You can find the benchmark results and the original code used in our manuscript under the `manuscript` folder here: [manuscript](https://github.com/YuanyueLi/FlashEntropySearch/tree/main/manuscript).
 
-We are continuously improving the code, and the latest version of the code can be found under the `ms_entropy` folder.
+We are continuously improving the code, and the latest version of the Flash entropy search implementation can be found under the `MSEntropy` repository here: [https://github.com/YuanyueLi/MSEntropy](https://github.com/YuanyueLi/MSEntropy).
 
-You can find a brief introduction below, or you can find a more detailed documentation here: [https://flashentropysearch.readthedocs.io](https://flashentropysearch.readthedocs.io/).
+You can find find the latest version of the documentation here: [https://msentropy.readthedocs.io/](https://msentropy.readthedocs.io/).
+
+A Graphical user interface (GUI) is also provided here: [https://github.com/YuanyueLi/EntropySearch/releases](https://github.com/YuanyueLi/EntropySearch/releases)
+
 
 ## GUI
 You can find the Graphical user interface (GUI) here: [Entropy Search](https://github.com/YuanyueLi/EntropySearch/releases)
@@ -20,7 +23,7 @@ You can find the Graphical user interface (GUI) here: [Entropy Search](https://g
 Python >= 3.8, C compiler and Python development headers are required.
 
 ```bash
-pip install ms_entropy
+pip install ms_entropy==0.6.0
 ```
 
 ### Usage
@@ -97,4 +100,4 @@ The result will look like this:
 
 ## In detail
 
-We also provided many flexible options for the user to customize the search. You can find a more detailed documentation here: [https://flashentropysearch.readthedocs.io](https://flashentropysearch.readthedocs.io/).
+We also provided many flexible options for the user to customize the search. You can find a more detailed documentation here: [https://msentropy.readthedocs.io](https://msentropy.readthedocs.io/).
