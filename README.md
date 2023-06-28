@@ -20,10 +20,10 @@ You can find the Graphical user interface (GUI) here: [Entropy Search](https://g
 
 ### Installation
 
-Python >= 3.8, C compiler and Python development headers are required.
+Python >= 3.7, C compiler and Python development headers are required.
 
 ```bash
-pip install ms_entropy==0.6.0
+pip install ms_entropy
 ```
 
 ### Usage
