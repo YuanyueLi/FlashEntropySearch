@@ -2,7 +2,9 @@
 
 # Flash Entropy Search
 
-This repository contains the original source code, benchmark data, and figures for the manuscript: `Li, Y., Fiehn, O., Flash entropy search to query all mass spectral libraries in real time. 04 April 2023, PREPRINT (Version 1) available at Research Square.` [https://doi.org/10.21203/rs.3.rs-2693233/v1](https://doi.org/10.21203/rs.3.rs-2693233/v1)
+This repository contains the original source code, benchmark data, and figures for the manuscript: 
+
+> Li, Y., Fiehn, O., Flash entropy search to query all mass spectral libraries in real time. 04 April 2023, PREPRINT (Version 1) available at Research Square. [https://doi.org/10.21203/rs.3.rs-2693233/v1](https://doi.org/10.21203/rs.3.rs-2693233/v1)
 
 To utilize the Flash Entropy Search algorithm, we offer a standalone software with a Graphical User Interface (GUI) named Entropy Search. This software can be downloaded from our GitHub page: [Entropy Search GitHub Release Page (https://github.com/YuanyueLi/EntropySearch/releases)](https://github.com/YuanyueLi/EntropySearch/releases). EntropySearch is compatible with Linux, Mac, and Windows operating systems.
 
@@ -17,7 +19,7 @@ For comprehensive details on the `Flash Entropy Search` and `MSEntropy` package,
 
 ## Incorporate the Flash Entropy Search Algorithm in Your Code
 
-To use the Flash Entropy Search algorithm in your own project, please refer to our MSEntropy repository: [MSEntropy GitHub Repository (https://github.com/YuanyueLi/MSEntropy)](https://github.com/YuanyueLi/MSEntropy).
+To use the Flash Entropy Search algorithm in your own project, please refer to our MSEntropy package: [MSEntropy GitHub Repository](https://github.com/YuanyueLi/MSEntropy).
 
 ### Installation
 
