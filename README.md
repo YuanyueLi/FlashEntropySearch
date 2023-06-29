@@ -1,6 +1,6 @@
-# Flash Entropy Search
-
 [![DOI](https://zenodo.org/badge/612393621.svg)](https://zenodo.org/badge/latestdoi/612393621)
+
+# Flash Entropy Search
 
 This repository contains the original source code, benchmark data, and figures for the manuscript: `Li, Y., Fiehn, O., Flash entropy search to query all mass spectral libraries in real time. 04 April 2023, PREPRINT (Version 1) available at Research Square.` [https://doi.org/10.21203/rs.3.rs-2693233/v1](https://doi.org/10.21203/rs.3.rs-2693233/v1)
 
