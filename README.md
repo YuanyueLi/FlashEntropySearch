@@ -12,10 +12,14 @@ If you want to incorporate the Flash Entropy Search algorithm into your own code
 
 For comprehensive details on the `Flash Entropy Search` and `MSEntropy` package, refer to our latest documentation: [MSEntropy Documentation (https://msentropy.readthedocs.io/)](https://msentropy.readthedocs.io/).
 
+------------------------------------------------------------------------
+
 ## Screenshots for the Entropy Search software
 
 ![Screenshot of GUI Input page](./docs/images/GUI_start.png)
 ![Screenshot of GUI Result Display](./docs/images/GUI_result.png)
+
+------------------------------------------------------------------------
 
 ## Incorporate the Flash Entropy Search Algorithm in Your Code
 
@@ -104,3 +108,35 @@ The result will look like this:
  'neutral_loss_search': array([0.6666666, 0.       , 0.6666666, 0.3333333], dtype=float32),
  'open_search': array([0.6666666 , 0.99999994, 0.3333333 , 0.6666666 ], dtype=float32)}
 ```
+
+------------------------------------------------------------------------
+
+## Ways to Calculate Spectral Entropy and Entropy Similarity
+
+There are several ways you can calculate spectral entropy and entropy similarity, either through our GUI or by integrating our package into your code.
+
+### Using the GUI
+
+Our GUI provides a user-friendly way to visualize and calculate entropy similarity:
+
+- For a straightforward approach to real-time visualize and calculate entropy similarity for two MS/MS spectra, use the [MS Viewer web app](https://yuanyueli.github.io/MSViewer).
+
+- To search one spectral file against another spectral file or a spectral library, use the [Entropy Search GUI](https://github.com/YuanyueLi/EntropySearch). The GUI supports `.mgf`, `.msp`, `.mzML`, and `.lbm2` file formats.
+
+### Coding with Our Package
+
+If you prefer to integrate our tools directly into your code, visit the [MSEntropy repository](https://github.com/YuanyueLi/MSEntropy) for the latest version of our code.
+
+- To calculate spectral entropy or entropy similarity:
+
+  - **Python** users: use the [`ms-entropy` package](https://pypi.org/project/ms-entropy/). Find the documentation [here](https://msentropy.readthedocs.io/).
+
+  - **R** users: use the [`msentropy` package](https://cran.r-project.org/web/packages/msentropy/index.html). Documentation is available [here](https://cran.r-project.org/web/packages/msentropy/msentropy.pdf).
+
+  - **C/C++** users: refer to the examples in the [languages/c folder of `MSEntropy` repository](https://github.com/YuanyueLi/MSEntropy/tree/main/languages/c).
+
+  - **JavaScript** users: refer to the examples in the [languages/javascript folder of `MSEntropy` repository](https://github.com/YuanyueLi/MSEntropy/tree/main/languages/javascript).
+
+- To use the Flash entropy search algorithm to search a spectral file against a large spectral library:
+
+  Currently, the Flash entropy search algorithm is only available in **Python**. Use the [`ms-entropy` package](https://pypi.org/project/ms-entropy/). Find the documentation [here](https://msentropy.readthedocs.io/).
